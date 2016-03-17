@@ -14,6 +14,7 @@
 		AAEB22071C9A348C00035524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22051C9A348C00035524 /* LaunchScreen.storyboard */; };
 		AAEB22121C9A348C00035524 /* AlCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB22111C9A348C00035524 /* AlCalcTests.swift */; };
 		AAEB221D1C9A348C00035524 /* AlCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB221C1C9A348C00035524 /* AlCalcUITests.swift */; };
+		AAEB222B1C9A3D8D00035524 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB222A1C9A3D8D00035524 /* CalculateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		AAEB22181C9A348C00035524 /* AlCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB221C1C9A348C00035524 /* AlCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlCalcUITests.swift; sourceTree = "<group>"; };
 		AAEB221E1C9A348C00035524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAEB222A1C9A3D8D00035524 /* CalculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				AAEB21FC1C9A348C00035524 /* AppDelegate.swift */,
+				AAEB222A1C9A3D8D00035524 /* CalculateViewController.swift */,
 				AAEB21FE1C9A348C00035524 /* ViewController.swift */,
 				AAEB22001C9A348C00035524 /* Main.storyboard */,
 				AAEB22031C9A348C00035524 /* Assets.xcassets */,
@@ -260,6 +263,7 @@
 			files = (
 				AAEB21FF1C9A348C00035524 /* ViewController.swift in Sources */,
 				AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */,
+				AAEB222B1C9A3D8D00035524 /* CalculateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
