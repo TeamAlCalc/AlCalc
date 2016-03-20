@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!
     
-    //Test3 Ethan
+    //Testing Branches
     
     override func viewDidLoad() {
         super.viewDidLoad()
