@@ -10,11 +10,15 @@ import UIKit
 
 class HomepageViewController: UIViewController {
     
-//test 1 kennon
+    var toPass: String!
+
+    @IBOutlet weak var homepageHeaderLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        homepageHeaderLabel.text = toPass
+        
     }
     
     override func didReceiveMemoryWarning() {

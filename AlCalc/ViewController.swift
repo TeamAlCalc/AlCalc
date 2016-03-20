@@ -29,10 +29,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let yourNextViewController = (segue.destinationViewController as! HomepageViewController)
+        yourNextViewController.toPass = usernameText.text
+        
+    }
+    
+    
     @IBAction func login(sender: UIButton) {
         
         if usernameText.text == "Ethan"{
             print("Log in successfully")
+            
             performSegueWithIdentifier("Homepage", sender: nil)
             
         } else {

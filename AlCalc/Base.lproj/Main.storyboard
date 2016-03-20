@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76" y="379"/>
+            <point key="canvasLocation" x="136" y="379"/>
         </scene>
         <!--HomepageViewController-->
         <scene sceneID="1Jv-Yy-vvM">
@@ -84,6 +84,9 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="homepageHeaderLabel" destination="zBu-AE-kXZ" id="n5U-aM-Ven"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilx-O0-fo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
