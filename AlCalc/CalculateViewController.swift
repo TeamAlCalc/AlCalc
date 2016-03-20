@@ -9,9 +9,7 @@
 import UIKit
 
 class CalculateViewController: UIViewController {
-    //1
-    //blah blah blah
-    //2
+
     
     @IBOutlet weak var myCalculation: UILabel!
     
