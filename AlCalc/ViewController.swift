@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    
+    @IBOutlet weak var usernameText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!
     
@@ -25,6 +28,22 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func login(sender: UIButton) {
+        
+        if usernameText.text == "Ethan"{
+            print("Log in successfully")
+            performSegueWithIdentifier("Homepage", sender: nil)
+            
+        } else {
+            print("Error logging in")
+            let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+
+    }
+    
 
 
 }
