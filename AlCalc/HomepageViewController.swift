@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomepageViewController.swift
 //  AlCalc
 //
 //  Created by Ethan on 3/16/16.
@@ -8,17 +8,9 @@
 
 import UIKit
 
-class CalculateViewController: UIViewController {
+class HomepageViewController: UIViewController {
     
-    
-    
-    @IBOutlet weak var myCalculation: UILabel!
-    
-    @IBAction func Calculate(sender: AnyObject) {
-        
-        myCalculation.text = "LET'S DRINK BITCHESSSS"
-    }
-  
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!
     
     override func viewDidLoad() {

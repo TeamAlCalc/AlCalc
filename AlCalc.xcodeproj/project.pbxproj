@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */; };
 		AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB21FC1C9A348C00035524 /* AppDelegate.swift */; };
 		AAEB21FF1C9A348C00035524 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB21FE1C9A348C00035524 /* ViewController.swift */; };
 		AAEB22021C9A348C00035524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22001C9A348C00035524 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		AAEB21F91C9A348C00035524 /* AlCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB21FC1C9A348C00035524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAEB21FE1C9A348C00035524 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				AAEB21FC1C9A348C00035524 /* AppDelegate.swift */,
+				AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */,
 				AAEB222A1C9A3D8D00035524 /* CalculateViewController.swift */,
 				AAEB21FE1C9A348C00035524 /* ViewController.swift */,
 				AAEB22001C9A348C00035524 /* Main.storyboard */,
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */,
 				AAEB21FF1C9A348C00035524 /* ViewController.swift in Sources */,
 				AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */,
 				AAEB222B1C9A3D8D00035524 /* CalculateViewController.swift in Sources */,
@@ -490,6 +494,7 @@
 				AAEB22231C9A348C00035524 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAEB22241C9A348C00035524 /* Build configuration list for PBXNativeTarget "AlCalcTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +503,7 @@
 				AAEB22261C9A348C00035524 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAEB22271C9A348C00035524 /* Build configuration list for PBXNativeTarget "AlCalcUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +512,7 @@
 				AAEB22291C9A348C00035524 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
