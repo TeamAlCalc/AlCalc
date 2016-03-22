@@ -14,41 +14,41 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AlCalc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jy8-CP-c0A">
-                                <rect key="frame" x="183" y="192" width="49" height="21"/>
+                                <rect key="frame" x="163" y="188" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esw-BA-emf">
-                                <rect key="frame" x="249" y="353" width="38" height="30"/>
+                                <rect key="frame" x="229" y="349" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IHS-z6-Wno"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HFu-Yh-EVM">
-                                <rect key="frame" x="128" y="239" width="159" height="30"/>
+                                <rect key="frame" x="108" y="235" width="159" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCs-HY-4ix">
-                                <rect key="frame" x="128" y="293" width="159" height="30"/>
+                                <rect key="frame" x="108" y="289" width="159" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOS-us-CBd">
-                                <rect key="frame" x="128" y="353" width="55" height="30"/>
+                                <rect key="frame" x="108" y="349" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="headerLabel" destination="Jy8-CP-c0A" id="tdE-fR-oyA"/>
                         <outlet property="loginButton" destination="esw-BA-emf" id="KYY-em-CCa"/>
@@ -79,6 +79,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="400" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFe-la-HEH">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Homepage" width="86" id="8GR-mb-ghL"/>
+                                    <barButtonItem title="Current" width="85" id="lgl-gU-ELE"/>
+                                    <barButtonItem title="Notifications" id="ybB-NR-qEU"/>
+                                    <barButtonItem title="Settings" width="86" id="D0j-ML-Uiv"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -161,6 +170,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NK1-99-7pL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2136" y="379"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="cfH-jZ-8cw">
+            <objects>
+                <viewController id="eFX-JZ-UHI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kus-Mb-Z4e"/>
+                        <viewControllerLayoutGuide type="bottom" id="3U4-Rc-khh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n1o-va-jhW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="jON-TS-mQi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2P-Dd-7N5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2183" y="520"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="juu-NT-sxm">
+            <objects>
+                <viewController id="rZY-bU-RTR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bAu-NR-fcM"/>
+                        <viewControllerLayoutGuide type="bottom" id="iBj-3x-bCf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SKc-K3-EbS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="yiP-a2-6W1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A18-A8-ejq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2183" y="-141"/>
         </scene>
         <!--CalculateViewController-->
         <scene sceneID="nlK-lh-9Rh">
