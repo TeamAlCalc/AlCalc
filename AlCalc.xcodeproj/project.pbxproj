@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A92CE8371C9F433000D1D6C9 /* InitialResponseViewControllerH.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CE8361C9F433000D1D6C9 /* InitialResponseViewControllerH.swift */; };
 		AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */; };
 		AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB21FC1C9A348C00035524 /* AppDelegate.swift */; };
 		AAEB21FF1C9A348C00035524 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB21FE1C9A348C00035524 /* ViewController.swift */; };
@@ -16,7 +15,6 @@
 		AAEB22071C9A348C00035524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22051C9A348C00035524 /* LaunchScreen.storyboard */; };
 		AAEB22121C9A348C00035524 /* AlCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB22111C9A348C00035524 /* AlCalcTests.swift */; };
 		AAEB221D1C9A348C00035524 /* AlCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB221C1C9A348C00035524 /* AlCalcUITests.swift */; };
-		AAEB222B1C9A3D8D00035524 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB222A1C9A3D8D00035524 /* CalculateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A92CE8361C9F433000D1D6C9 /* InitialResponseViewControllerH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialResponseViewControllerH.swift; sourceTree = "<group>"; };
 		AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		AAEB21F91C9A348C00035524 /* AlCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB21FC1C9A348C00035524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +49,6 @@
 		AAEB22181C9A348C00035524 /* AlCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB221C1C9A348C00035524 /* AlCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlCalcUITests.swift; sourceTree = "<group>"; };
 		AAEB221E1C9A348C00035524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AAEB222A1C9A3D8D00035524 /* CalculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +101,8 @@
 			children = (
 				AAEB21FC1C9A348C00035524 /* AppDelegate.swift */,
 				AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */,
-				AAEB222A1C9A3D8D00035524 /* CalculateViewController.swift */,
 				AAEB21FE1C9A348C00035524 /* ViewController.swift */,
 				AAEB22001C9A348C00035524 /* Main.storyboard */,
-				A92CE8361C9F433000D1D6C9 /* InitialResponseViewControllerH.swift */,
 				AAEB22031C9A348C00035524 /* Assets.xcassets */,
 				AAEB22051C9A348C00035524 /* LaunchScreen.storyboard */,
 				AAEB22081C9A348C00035524 /* Info.plist */,
@@ -269,9 +263,7 @@
 			files = (
 				AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */,
 				AAEB21FF1C9A348C00035524 /* ViewController.swift in Sources */,
-				A92CE8371C9F433000D1D6C9 /* InitialResponseViewControllerH.swift in Sources */,
 				AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */,
-				AAEB222B1C9A3D8D00035524 /* CalculateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
