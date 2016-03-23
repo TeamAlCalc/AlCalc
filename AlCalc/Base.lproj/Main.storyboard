@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136" y="379"/>
+            <point key="canvasLocation" x="135.5" y="378.5"/>
         </scene>
         <!--HomepageViewController-->
         <scene sceneID="1Jv-Yy-vvM">
@@ -70,29 +70,29 @@
                         <viewControllerLayoutGuide type="bottom" id="F7L-Pj-vfS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hvH-zB-Ago">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="400" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fW4-AD-ufm">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Homepage" id="8zC-q2-mIe"/>
+                                    <barButtonItem title="Current" width="74.5" id="a5w-zS-fS9"/>
+                                    <barButtonItem title="Notifications" id="RvB-8i-II3"/>
+                                    <barButtonItem title="Settings" width="86" id="V0S-lx-Lp1"/>
+                                </items>
+                            </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Homepage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBu-AE-kXZ">
-                                <rect key="frame" x="165" y="46" width="84" height="21"/>
+                                <rect key="frame" x="145" y="48" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="400" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFe-la-HEH">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem title="Homepage" width="86" id="8GR-mb-ghL"/>
-                                    <barButtonItem title="Current" width="85" id="lgl-gU-ELE"/>
-                                    <barButtonItem title="Notifications" id="ybB-NR-qEU"/>
-                                    <barButtonItem title="Settings" width="86" id="D0j-ML-Uiv"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="homepageHeaderLabel" destination="zBu-AE-kXZ" id="n5U-aM-Ven"/>
                     </connections>
@@ -110,84 +110,36 @@
                         <viewControllerLayoutGuide type="bottom" id="V6F-ZL-b3D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Uj-gG-Xz6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBE-3F-irF">
-                                <rect key="frame" x="192" y="393" width="30" height="30"/>
-                                <state key="normal" title="Yes"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghl-cL-96t">
-                                <rect key="frame" x="192" y="463" width="30" height="30"/>
-                                <state key="normal" title="No"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBu-5X-hkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="379"/>
+            <point key="canvasLocation" x="1566.5" y="378.5"/>
         </scene>
-        <!--InitialResponseViewControllerH-->
+        <!--UInitialResponseViewController-->
         <scene sceneID="a2U-tJ-Duv">
             <objects>
-                <viewController title="InitialResponseViewControllerH" id="IDa-Be-e21" sceneMemberID="viewController">
+                <viewController title="UInitialResponseViewController" id="IDa-Be-e21" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DIo-bk-aOc"/>
                         <viewControllerLayoutGuide type="bottom" id="9Z7-T6-Jr8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="u8w-x1-4tP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NK1-99-7pL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2136" y="379"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="cfH-jZ-8cw">
-            <objects>
-                <viewController id="eFX-JZ-UHI" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kus-Mb-Z4e"/>
-                        <viewControllerLayoutGuide type="bottom" id="3U4-Rc-khh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n1o-va-jhW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="jON-TS-mQi"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r2P-Dd-7N5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2183" y="520"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="juu-NT-sxm">
-            <objects>
-                <viewController id="rZY-bU-RTR" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bAu-NR-fcM"/>
-                        <viewControllerLayoutGuide type="bottom" id="iBj-3x-bCf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SKc-K3-EbS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="yiP-a2-6W1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A18-A8-ejq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2183" y="-141"/>
         </scene>
         <!--CalculateViewController-->
         <scene sceneID="nlK-lh-9Rh">
@@ -198,7 +150,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8fQ-jg-XKe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IEz-5g-SHU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="et4-Jd-roN">
@@ -222,7 +174,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="myCalculation" destination="pBb-yJ-ogu" id="2K8-ND-TTP"/>
                     </connections>
