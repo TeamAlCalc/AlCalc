@@ -112,8 +112,7 @@
                     <view key="view" contentMode="scaleToFill" id="4Uj-gG-Xz6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-<<<<<<< HEAD
-=======
+
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghl-cL-96t">
                                 <rect key="frame" x="266" y="393" width="30" height="30"/>
@@ -134,7 +133,6 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
->>>>>>> master
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -147,11 +145,8 @@
         <!--UInitialResponseViewController-->
         <scene sceneID="a2U-tJ-Duv">
             <objects>
-<<<<<<< HEAD
-                <viewController title="UInitialResponseViewController" id="IDa-Be-e21" sceneMemberID="viewController">
-=======
+
                 <viewController title="InitialResponseViewControllerH" id="IDa-Be-e21" customClass="InitialResponseViewControllerH" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> master
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DIo-bk-aOc"/>
                         <viewControllerLayoutGuide type="bottom" id="9Z7-T6-Jr8"/>
