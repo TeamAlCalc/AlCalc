@@ -82,7 +82,7 @@
                             <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="400" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFe-la-HEH">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Homepge" width="86" id="8GR-mb-ghL"/>
+                                    <barButtonItem title="Homepage" width="86" id="8GR-mb-ghL"/>
                                     <barButtonItem title="Current" width="85" id="lgl-gU-ELE"/>
                                     <barButtonItem title="Notifications" id="ybB-NR-qEU"/>
                                     <barButtonItem title="Settings" width="86" id="D0j-ML-Uiv"/>
