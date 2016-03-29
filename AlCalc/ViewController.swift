@@ -31,6 +31,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         datePicker.addTarget(self, action:nil, forControlEvents: UIControlEvents.ValueChanged)
+        /*
+        if let dateOfBirth = (item.placemark.addressDictionary["Street"] as? String) {
+            // It is safe to use the street variable here
+        }
+        else {
+            // "Street" didn't exist in dictionary
+        }*/
     }
 
     override func didReceiveMemoryWarning() {
