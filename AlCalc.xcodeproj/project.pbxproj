@@ -11,6 +11,7 @@
 		AA20C2821CAA1F0600E9E0E7 /* GuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20C2811CAA1F0600E9E0E7 /* GuestListViewController.swift */; };
 		AA5811C81CAC84C50060E27C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C71CAC84C50060E27C /* User.swift */; };
 		AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */; };
+		AA858A781CADC42D00A7D268 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA858A771CADC42D00A7D268 /* Party.swift */; };
 		AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C8EF91CACA1D200265D0D /* Alcohol.swift */; };
 		AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */; };
 		AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB21FC1C9A348C00035524 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 		AA20C2811CAA1F0600E9E0E7 /* GuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestListViewController.swift; sourceTree = "<group>"; };
 		AA5811C71CAC84C50060E27C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeViewController.swift; sourceTree = "<group>"; };
+		AA858A771CADC42D00A7D268 /* Party.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		AA8C8EF91CACA1D200265D0D /* Alcohol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alcohol.swift; sourceTree = "<group>"; };
 		AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		AAEB21F91C9A348C00035524 /* AlCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				AA8C8EF91CACA1D200265D0D /* Alcohol.swift */,
 				AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */,
 				AA20C2811CAA1F0600E9E0E7 /* GuestListViewController.swift */,
+				AA858A771CADC42D00A7D268 /* Party.swift */,
 			);
 			path = AlCalc;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */,
+				AA858A781CADC42D00A7D268 /* Party.swift in Sources */,
 				AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */,
 				AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */,
 				AAF91B301CAC95520061D990 /* AgeValidViewController.swift in Sources */,

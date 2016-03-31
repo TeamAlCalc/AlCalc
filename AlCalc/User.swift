@@ -25,8 +25,8 @@ class User: NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let dob = aDecoder.decodeObjectForKey(PropertyKey.dobKey) as! String
         
+        let dob = aDecoder.decodeObjectForKey(PropertyKey.dobKey) as! String
         self.init(dob: dob)
         
     }
