@@ -12,7 +12,8 @@ import UIKit
 class GuestListViewController : UIViewController {
     
 
-    
+    @IBOutlet weak var addButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -23,31 +24,30 @@ class GuestListViewController : UIViewController {
        
     }
     
-    @IBAction func addPressed(sender: AnyObject) {
+    
+    @IBAction func addPressed(sender: AnyObject?) {
         
+        let alert = UIAlertController(title: "Add Guest", message: "Add Names of Guest", preferredStyle: UIAlertControllerStyle.Alert)
         
-        let alert = UIAlertController(title: , message: "By clicking accept I agree that I am the age previously specified and I agree to the Terms of Service.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
-        alert.addAction(UIAlertAction(title: "I Agree", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
-            self.saveDob()
-            self.performSegueWithIdentifier("Homepage", sender: nil)
-            
-        }))
+        
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        
+        alert.addTextFieldWithConfigurationHandler({(textField : UITextField!) in
+        textField.placeholder = "Drinking Buddies"
+        textField.secureTextEntry = false
+        textField.keyboardType = UIKeyboardType.Alphabet
+        print(textField.text)
+        //inputTextField = textField
+        alert.textFields![0] as UITextField
+            })
         
         self.presentViewController(alert, animated: true, completion: nil)
-
-        
-    
-    
-    
-    
-    
-    
     }
-    
-    
-    
-    
+
+  
     
 }
 
