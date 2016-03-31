@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="51U-81-o8S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fcU-eE-zZo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--AgeValidViewController-->
+        <scene sceneID="nig-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AgeValidViewController" id="BYZ-38-t0r" customClass="AgeValidViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,7 +27,7 @@
                                 <rect key="frame" x="231" y="593" width="106" height="30"/>
                                 <state key="normal" title="I am 21 or older"/>
                                 <connections>
-                                    <action selector="ofAgeConfirm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sqI-BV-N7X"/>
+                                    <action selector="ofAgeConfirm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mWB-KK-hUT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XG-jY-Xi1">
@@ -49,16 +49,16 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="datePicker" destination="aIm-lQ-iOW" id="RKA-RW-zqD"/>
-                        <outlet property="headerLabel" destination="Jy8-CP-c0A" id="tdE-fR-oyA"/>
-                        <outlet property="ofAgeButton" destination="2Vw-4D-kd7" id="nFX-SJ-GeV"/>
-                        <outlet property="tosButton" destination="7XG-jY-Xi1" id="f5M-zL-i9e"/>
+                        <outlet property="datePicker" destination="aIm-lQ-iOW" id="ybD-wh-zhF"/>
+                        <outlet property="headerLabel" destination="Jy8-CP-c0A" id="kgS-9r-CGO"/>
+                        <outlet property="ofAgeButton" destination="2Vw-4D-kd7" id="HTw-ig-hN7"/>
+                        <outlet property="tosButton" destination="7XG-jY-Xi1" id="aB4-Tx-yEw"/>
                         <segue destination="Gft-ba-Ubb" kind="show" identifier="Homepage" id="L4q-Yq-kvr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.5" y="378.5"/>
+            <point key="canvasLocation" x="154.5" y="-445.5"/>
         </scene>
         <!--HomepageViewController-->
         <scene sceneID="1Jv-Yy-vvM">
@@ -81,12 +81,22 @@
                                     <barButtonItem title="Settings" width="86" id="V0S-lx-Lp1"/>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Homepage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBu-AE-kXZ">
-                                <rect key="frame" x="145" y="48" width="84" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AlCalc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBu-AE-kXZ">
+                                <rect key="frame" x="129" y="63" width="117" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6y-0G-KB9">
+                                <rect key="frame" x="139" y="485" width="97" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Old Party"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKG-ks-KIZ">
+                                <rect key="frame" x="140" y="422" width="95" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="New Party"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -94,11 +104,35 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="homepageHeaderLabel" destination="zBu-AE-kXZ" id="n5U-aM-Ven"/>
+                        <outlet property="newPartyButton" destination="AKG-ks-KIZ" id="bak-QW-B2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilx-O0-fo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610.5" y="378.5"/>
+            <point key="canvasLocation" x="154.5" y="378.5"/>
+        </scene>
+        <!--FirstTimeViewController-->
+        <scene sceneID="Dj9-xI-vIJ">
+            <objects>
+                <viewController title="FirstTimeViewController" id="fcU-eE-zZo" customClass="FirstTimeViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nrw-7e-kfk"/>
+                        <viewControllerLayoutGuide type="bottom" id="7je-Q9-lBZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u7D-Rb-26f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="Gft-ba-Ubb" kind="show" identifier="AgeValid" id="b1E-pz-AiX"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="AgeInvalid" id="Y61-ae-k3w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9eH-Gz-yxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-404.5" y="52.5"/>
         </scene>
         <!--GuestListViewController-->
         <scene sceneID="9H5-NX-QP4">
@@ -386,4 +420,7 @@
             <point key="canvasLocation" x="2227.5" y="378.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="b1E-pz-AiX"/>
+    </inferredMetricsTieBreakers>
 </document>

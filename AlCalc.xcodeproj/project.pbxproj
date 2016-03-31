@@ -9,14 +9,17 @@
 /* Begin PBXBuildFile section */
 		AA20C2801CAA1E0900E9E0E7 /* BeerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */; };
 		AA20C2821CAA1F0600E9E0E7 /* GuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20C2811CAA1F0600E9E0E7 /* GuestListViewController.swift */; };
+		AA5811C81CAC84C50060E27C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C71CAC84C50060E27C /* User.swift */; };
+		AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */; };
+		AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C8EF91CACA1D200265D0D /* Alcohol.swift */; };
 		AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */; };
 		AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB21FC1C9A348C00035524 /* AppDelegate.swift */; };
-		AAEB21FF1C9A348C00035524 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB21FE1C9A348C00035524 /* ViewController.swift */; };
 		AAEB22021C9A348C00035524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22001C9A348C00035524 /* Main.storyboard */; };
 		AAEB22041C9A348C00035524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22031C9A348C00035524 /* Assets.xcassets */; };
 		AAEB22071C9A348C00035524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22051C9A348C00035524 /* LaunchScreen.storyboard */; };
 		AAEB22121C9A348C00035524 /* AlCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB22111C9A348C00035524 /* AlCalcTests.swift */; };
 		AAEB221D1C9A348C00035524 /* AlCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB221C1C9A348C00035524 /* AlCalcUITests.swift */; };
+		AAF91B301CAC95520061D990 /* AgeValidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF91B2F1CAC95520061D990 /* AgeValidViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +42,12 @@
 /* Begin PBXFileReference section */
 		AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerSelectionViewController.swift; sourceTree = "<group>"; };
 		AA20C2811CAA1F0600E9E0E7 /* GuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestListViewController.swift; sourceTree = "<group>"; };
+		AA5811C71CAC84C50060E27C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeViewController.swift; sourceTree = "<group>"; };
+		AA8C8EF91CACA1D200265D0D /* Alcohol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alcohol.swift; sourceTree = "<group>"; };
 		AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		AAEB21F91C9A348C00035524 /* AlCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB21FC1C9A348C00035524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AAEB21FE1C9A348C00035524 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AAEB22011C9A348C00035524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAEB22031C9A348C00035524 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAEB22061C9A348C00035524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 		AAEB22181C9A348C00035524 /* AlCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB221C1C9A348C00035524 /* AlCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlCalcUITests.swift; sourceTree = "<group>"; };
 		AAEB221E1C9A348C00035524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAF91B2F1CAC95520061D990 /* AgeValidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeValidViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,14 +109,17 @@
 		AAEB21FB1C9A348C00035524 /* AlCalc */ = {
 			isa = PBXGroup;
 			children = (
+				AAF91B2F1CAC95520061D990 /* AgeValidViewController.swift */,
 				AAEB21FC1C9A348C00035524 /* AppDelegate.swift */,
+				AA5811C71CAC84C50060E27C /* User.swift */,
 				AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */,
-				AAEB21FE1C9A348C00035524 /* ViewController.swift */,
 				AAEB22001C9A348C00035524 /* Main.storyboard */,
 				AAEB22031C9A348C00035524 /* Assets.xcassets */,
 				AAEB22051C9A348C00035524 /* LaunchScreen.storyboard */,
 				AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */,
 				AAEB22081C9A348C00035524 /* Info.plist */,
+				AA8C8EF91CACA1D200265D0D /* Alcohol.swift */,
+				AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */,
 				AA20C2811CAA1F0600E9E0E7 /* GuestListViewController.swift */,
 			);
 			path = AlCalc;
@@ -267,8 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */,
 				AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */,
-				AAEB21FF1C9A348C00035524 /* ViewController.swift in Sources */,
+				AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */,
+				AAF91B301CAC95520061D990 /* AgeValidViewController.swift in Sources */,
+				AA5811C81CAC84C50060E27C /* User.swift in Sources */,
 				AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */,
 				AA20C2801CAA1E0900E9E0E7 /* BeerSelectionViewController.swift in Sources */,
 				AA20C2821CAA1F0600E9E0E7 /* GuestListViewController.swift in Sources */,
