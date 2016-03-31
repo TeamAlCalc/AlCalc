@@ -1,52 +1,51 @@
 //
-//  GuestList.swift
+//  GuestListViewController.swift
 //  AlCalc
 //
-//  Created by Young, Kennon Lucas on 3/23/16.
+//  Created by Young, Kennon Lucas on 3/30/16.
 //  Copyright © 2016 Team AlCalc. All rights reserved.
 //
 
-
 import UIKit
 
-var list = [String]()
-
-class GuestList: UIViewController {
+class GuestListViewController: UIViewController {
     
-    @IBOutlet var tableView : UITableView!
+    var task = [String] ()
+
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("list") != nil{
-            list = NSUserDefaults.standardUserDefaults().objectForKey("list") as! [String]
-        }
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return list.count
-    }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
-        
-        cell.textLabel?.text = list[indexPath.row]
-        
-        return cell
+      
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
-        if editingStyle == UITableViewCellEditingStyle.Delete{
-            list.removeAtIndex(indexPath.row)
-            NSUserDefaults.standardUserDefaults().setObject(list, forKey: "list")
-            tableView.reloadData()
-        }
-    }
-    override func viewDidAppear(animated: Bool) {
-        tableView.reloadData()
+    @IBAction func addPressed(sender: AnyObject) {
+        let alert = UIAlertController(title:"Add Names", message:"Enter Names of Guest", preferredStyle: UIAlertControllerStyle.Alert)
+
+       
+        
+        alert.addAction(UIAlertAction(title:"Cancel", style:
+            UIAlertActionStyle.Default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title:"Ok", style:
+            UIAlertActionStyle.Default, handler: nil))
+        
+        
+        
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
+        
     }
     
+
 }
+
