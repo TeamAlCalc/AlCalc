@@ -10,7 +10,7 @@ import Foundation
 
 class User: NSObject, NSCoding {
     
-    var dob = "1"
+    var dob: String
 
     struct PropertyKey {
     

@@ -24,5 +24,6 @@ class Alcohol: NSObject {
         self.abv = a
     }
     
+    // let budLight24: Alcohol = Alcohol(n: "Bud Light 24pack",q: 24,p: 14.99,f: 12,a: 5.0)
     
 }
