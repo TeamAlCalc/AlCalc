@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9122D851CADBDEC00A98FC4 /* GuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */; };
 		AA20C2801CAA1E0900E9E0E7 /* BeerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */; };
-		AA20C2821CAA1F0600E9E0E7 /* GuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20C2811CAA1F0600E9E0E7 /* GuestListViewController.swift */; };
 		AA5811C81CAC84C50060E27C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C71CAC84C50060E27C /* User.swift */; };
 		AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */; };
 		AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C8EF91CACA1D200265D0D /* Alcohol.swift */; };
@@ -40,8 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestListViewController.swift; sourceTree = "<group>"; };
 		AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerSelectionViewController.swift; sourceTree = "<group>"; };
-		AA20C2811CAA1F0600E9E0E7 /* GuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestListViewController.swift; sourceTree = "<group>"; };
 		AA5811C71CAC84C50060E27C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeViewController.swift; sourceTree = "<group>"; };
 		AA8C8EF91CACA1D200265D0D /* Alcohol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alcohol.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 				AAEB22081C9A348C00035524 /* Info.plist */,
 				AA8C8EF91CACA1D200265D0D /* Alcohol.swift */,
 				AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */,
-				AA20C2811CAA1F0600E9E0E7 /* GuestListViewController.swift */,
+				A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */,
 			);
 			path = AlCalc;
 			sourceTree = "<group>";
@@ -279,11 +279,11 @@
 				AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */,
 				AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */,
 				AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */,
+				A9122D851CADBDEC00A98FC4 /* GuestListViewController.swift in Sources */,
 				AAF91B301CAC95520061D990 /* AgeValidViewController.swift in Sources */,
 				AA5811C81CAC84C50060E27C /* User.swift in Sources */,
 				AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */,
 				AA20C2801CAA1E0900E9E0E7 /* BeerSelectionViewController.swift in Sources */,
-				AA20C2821CAA1F0600E9E0E7 /* GuestListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
