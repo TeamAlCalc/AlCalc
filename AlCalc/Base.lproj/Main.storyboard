@@ -137,7 +137,7 @@
         <!--GuestListViewController-->
         <scene sceneID="9H5-NX-QP4">
             <objects>
-                <viewController title="GuestListViewController" id="6c1-8t-zTT" customClass="GuestListViewController" sceneMemberID="viewController">
+                <viewController title="GuestListViewController" id="6c1-8t-zTT" customClass="GuestListViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SjC-lI-B6v"/>
                         <viewControllerLayoutGuide type="bottom" id="Mha-JQ-qdw"/>
@@ -160,7 +160,7 @@
                                     <navigationItem title="Guest List" id="g8o-76-cxe">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="L3u-Zj-uPJ">
                                             <connections>
-                                                <action selector="addPressed:" destination="6c1-8t-zTT" id="20a-Qk-2Q4"/>
+                                                <action selector="addPressed:" destination="6c1-8t-zTT" id="bcY-5C-j77"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -178,6 +178,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addButton" destination="L3u-Zj-uPJ" id="dEu-w8-XY9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHu-Re-TZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
