@@ -12,8 +12,10 @@ class BeerSelectionViewController: UIViewController {
     
     @IBOutlet weak var textarea: UITextField!
     @IBOutlet weak var textarea2: UITextField!
+    @IBOutlet weak var textarea3: UITextField!
     
     @IBOutlet weak var priceDisplay: UILabel!
+    @IBOutlet weak var canLabel: UILabel!
     
     @IBOutlet weak var showCalc: UIButton!
     
@@ -31,11 +33,14 @@ class BeerSelectionViewController: UIViewController {
     @IBAction func whenClicked(sender: AnyObject) {
         let firstValue = Double(textarea.text!)
         let secondValue = Double(textarea2.text!)
+        let thirdValue = Double(textarea3.text!)
         
-
-        let newValue = Double(secondValue! / firstValue!)
+        let priceValue = Double(secondValue! / firstValue!)
+        let canValue = Double(thirdValue! / firstValue!)
         
-        priceDisplay.text = "Price for each: $\(newValue)"
+        priceDisplay.text = "Price for each: $\(priceValue)"
+        
+        canLabel.text = "Cans for each: \(canValue) cans"
     }
     
 }
