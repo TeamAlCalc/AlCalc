@@ -10,6 +10,12 @@ import UIKit
 
 class BeerSelectionViewController: UIViewController {
     
+    @IBOutlet weak var textarea: UITextField!
+    @IBOutlet weak var textarea2: UITextField!
+    
+    @IBOutlet weak var priceDisplay: UILabel!
+    
+    @IBOutlet weak var showCalc: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +28,15 @@ class BeerSelectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func whenClicked(sender: AnyObject) {
+        let firstValue = Double(textarea.text!)
+        let secondValue = Double(textarea2.text!)
+        
+
+        let newValue = Double(secondValue! / firstValue!)
+        
+        priceDisplay.text = "Price for each: $\(newValue)"
+    }
     
 }
 
