@@ -9,7 +9,6 @@
 import UIKit
 
 class FirstTimeViewController: UIViewController {
-    
 
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
