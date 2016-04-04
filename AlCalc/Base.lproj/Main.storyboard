@@ -174,9 +174,12 @@
                                 <rect key="frame" x="276" y="617" width="79" height="30"/>
                                 <state key="normal" title="Select Beer"/>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9qc-tP-26x" customClass="GuestListViewController">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="REq-xx-9ql">
                                 <rect key="frame" x="0.0" y="64" width="375" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6c1-8t-zTT" id="Vk9-I2-FzW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -184,7 +187,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addButton" destination="L3u-Zj-uPJ" id="dEu-w8-XY9"/>
-                        <outlet property="tableView" destination="9qc-tP-26x" id="1pq-1q-8CN"/>
+                        <outlet property="tableView" destination="REq-xx-9ql" id="OjP-0t-YQW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHu-Re-TZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
