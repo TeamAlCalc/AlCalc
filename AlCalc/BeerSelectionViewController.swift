@@ -44,11 +44,24 @@ class BeerSelectionViewController: UIViewController {
         let thirdValue = Double(textarea3.text!)
         
         let priceValue = Double(secondValue! / firstValue!)
-        let canValue = Double(thirdValue! / firstValue!)
+
+        let cans = Double(thirdValue! / firstValue!)
         
-        priceDisplay.text = "Price for each: $\(priceValue)"
+        let roundValue = Double(round(priceValue*100)/100)
         
-        canLabel.text = "Cans for each: \(canValue) cans"
+        let cansForEach = String(format: "%.f", cans)
+        let remCans = (thirdValue! % firstValue!)
+        
+        priceDisplay.text = "Price for each: $\(roundValue)"
+        
+        if remCans == 0{
+            
+            canLabel.text = "Beers for each: \(cansForEach) cans"
+        }
+        else {
+            canLabel.text = "Cans for each: \(cansForEach) beers, with \(remCans) left over"
+            
+        }
     }
     
 }
