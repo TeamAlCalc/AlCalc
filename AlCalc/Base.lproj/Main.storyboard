@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--AgeValidViewController-->
@@ -173,10 +174,17 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-Jv-cv8">
                                 <rect key="frame" x="276" y="617" width="79" height="30"/>
                                 <state key="normal" title="Select Beer"/>
+                                <connections>
+                                    <action selector="selectBeer:" destination="6c1-8t-zTT" eventType="touchUpInside" id="K1P-md-kTE"/>
+                                    <segue destination="Z8m-lg-SL2" kind="show" identifier="passInt" id="HJR-ul-jVk"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="REq-xx-9ql">
-                                <rect key="frame" x="0.0" y="64" width="375" height="545"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="REq-xx-9ql">
+                                <rect key="frame" x="-8" y="69" width="375" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="REq-xx-9ql" secondAttribute="height" multiplier="75:109" id="8Vk-xB-YZl"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="6c1-8t-zTT" id="Vk9-I2-FzW"/>
                                 </connections>
@@ -187,6 +195,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addButton" destination="L3u-Zj-uPJ" id="dEu-w8-XY9"/>
+                        <outlet property="selectButton" destination="cKr-Jv-cv8" id="p6Y-P6-43S"/>
                         <outlet property="tableView" destination="REq-xx-9ql" id="OjP-0t-YQW"/>
                     </connections>
                 </viewController>
@@ -228,11 +237,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="# of Friends" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWk-0W-3IZ">
-                                <rect key="frame" x="75" y="119" width="216" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Beer Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="inI-Zp-ySp">
                                 <rect key="frame" x="75" y="182" width="216" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -249,12 +253,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brew Selection " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ky-yJ-mec">
-                                <rect key="frame" x="11" y="28" width="344" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.88720958768324609" green="0.66928621418875422" blue="0.24513522531054038" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJi-qt-XsF">
                                 <rect key="frame" x="139" y="337" width="97" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -263,20 +261,39 @@
                                     <action selector="whenClicked:" destination="Z8m-lg-SL2" eventType="touchUpInside" id="dqt-Iz-vst"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="et5-Rx-vSh">
+                                <rect key="frame" x="75" y="118" width="216" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bcg-eg-CDZ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Brew Selection" id="rFe-5N-DCM">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3t5-le-2Zv">
+                                            <connections>
+                                                <segue destination="CPm-FA-IHu" kind="unwind" unwindAction="cancelToGuestListViewController:" id="bm7-g8-zil"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="canLabel" destination="aRl-aJ-iea" id="PTU-SB-kZc"/>
+                        <outlet property="numPeopleLabel" destination="et5-Rx-vSh" id="bKH-VO-cCz"/>
                         <outlet property="priceDisplay" destination="Az3-Dj-fIv" id="bxp-TL-ayZ"/>
                         <outlet property="showCalc" destination="XJi-qt-XsF" id="21o-iN-rz8"/>
-                        <outlet property="textarea" destination="TWk-0W-3IZ" id="Kmj-xB-uX2"/>
                         <outlet property="textarea2" destination="inI-Zp-ySp" id="cUf-ri-qoy"/>
                         <outlet property="textarea3" destination="UrY-la-c7B" id="jj8-oL-QoX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxl-Q6-6gq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CPm-FA-IHu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1350.5" y="384.5"/>
         </scene>

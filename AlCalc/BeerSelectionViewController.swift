@@ -10,6 +10,11 @@ import UIKit
 
 class BeerSelectionViewController: UIViewController {
     
+    @IBOutlet weak var numPeopleLabel: UILabel!
+    
+    var value:Int!
+    
+    
     @IBOutlet weak var textarea: UITextField!
     @IBOutlet weak var textarea2: UITextField!
     @IBOutlet weak var textarea3: UITextField!
@@ -21,6 +26,9 @@ class BeerSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //austin, this is where the number of guest comes in from segue
+        numPeopleLabel.text = "\(value)"
+        
         // Do any additional setup after loading the view, typically from a nib.
 
     }
