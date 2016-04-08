@@ -9,13 +9,20 @@
 
 import UIKit
 
+//var num : Int!
+
 class GuestListViewController : UIViewController, UITableViewDataSource {
     
-
+    @IBAction func cancelToGuestListViewController(segue: UIStoryboardSegue){
+        
+    }
     @IBOutlet weak var addButton: UIBarButtonItem!
 
+    @IBOutlet weak var selectButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
+    
+
     
     var names = [String]()
     var deletearray = [String]()
@@ -26,11 +33,14 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     
     }
     
+    
+  
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return names.count
     }
     
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell =
@@ -56,7 +66,20 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     
     
     
-
+    
+    @IBAction func selectBeer(sender: AnyObject) {
+        self.performSegueWithIdentifier("passInt", sender: names.count)
+        
+   
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if( segue.identifier == "passInt"){
+            let destination = (segue.destinationViewController as! BeerSelectionViewController)
+                destination.value = names.count
+            
+        }
+    }
     
     @IBAction func addPressed(sender: AnyObject?) {
         
@@ -81,12 +104,16 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     }
         alert.addAction(cancelaction)
         alert.addAction(okaction)
-
+        
+        
+        //print(num)
+        
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
   
+    
     
 }
 
