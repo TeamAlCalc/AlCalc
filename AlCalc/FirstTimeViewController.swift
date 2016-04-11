@@ -56,9 +56,9 @@ class FirstTimeViewController: UIViewController {
         let url = NSURL(string: "http://webdev.cislabs.uncw.edu/~sam7826/get.php")
         let data = NSData(contentsOfURL: url!)
         values = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+        print(values[0])
         
-        
-        saveBeer(values)
+        //saveBeer(values)
     }
     
     func saveBeer(beerArray: NSArray){
