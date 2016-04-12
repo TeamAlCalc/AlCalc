@@ -20,7 +20,6 @@ class HomepageViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //homepageHeaderLabel.text = toPass
-
         
     }
     
@@ -34,7 +33,6 @@ class HomepageViewController: UIViewController {
         performSegueWithIdentifier("NewParty", sender: nil)
         
     }
-    
     
 }
 
