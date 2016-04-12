@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fcU-eE-zZo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6c1-8t-zTT">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -215,10 +215,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QND-0G-LLz">
-                                <rect key="frame" x="292" y="617" width="63" height="30"/>
-                                <state key="normal" title="Beer Run"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABV/person:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJe-My-DOs">
                                 <rect key="frame" x="11" y="561" width="95" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -279,11 +275,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QND-0G-LLz">
+                                <rect key="frame" x="292" y="617" width="63" height="30"/>
+                                <state key="normal" title="Beer Run"/>
+                                <connections>
+                                    <action selector="BeerRunClicked:" destination="Z8m-lg-SL2" eventType="touchUpInside" id="Hzl-Zw-YyL"/>
+                                    <segue destination="lvk-LR-vyX" kind="show" identifier="PassList" id="y3W-WU-6K2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="BeerRun" destination="QND-0G-LLz" id="jnG-Cu-kIr"/>
                         <outlet property="canLabel" destination="aRl-aJ-iea" id="PTU-SB-kZc"/>
                         <outlet property="numPeopleLabel" destination="et5-Rx-vSh" id="bKH-VO-cCz"/>
                         <outlet property="priceDisplay" destination="Az3-Dj-fIv" id="bxp-TL-ayZ"/>
@@ -296,6 +301,43 @@
                 <exit id="CPm-FA-IHu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1350.5" y="384.5"/>
+        </scene>
+        <!--Final Guest List View Controller-->
+        <scene sceneID="uqW-aO-4Yu">
+            <objects>
+                <viewController id="lvk-LR-vyX" customClass="FinalGuestListViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aNB-Ov-FHK"/>
+                        <viewControllerLayoutGuide type="bottom" id="hPb-FY-Pgq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zzS-Yq-nZL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-uh-ooE">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Payment" id="9GY-i0-oj7"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gf3-ES-aOg">
+                                <rect key="frame" x="0.0" y="72" width="375" height="291"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lvk-LR-vyX" id="uvH-YE-WHx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tview" destination="gf3-ES-aOg" id="bhe-sf-x0L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Zz-Eg-PJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750.5" y="390.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

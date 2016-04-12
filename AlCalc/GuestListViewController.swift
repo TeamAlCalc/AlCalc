@@ -77,6 +77,8 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
         if( segue.identifier == "passInt"){
             let destination = (segue.destinationViewController as! BeerSelectionViewController)
                 destination.value = names.count
+                destination.newNames = names
+            
             
         }
     }
