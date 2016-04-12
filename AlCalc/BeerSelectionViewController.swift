@@ -11,9 +11,10 @@ import UIKit
 class BeerSelectionViewController: UIViewController {
     
     @IBOutlet weak var numPeopleLabel: UILabel!
-    
+    var newNames : [String]!
     var value:Int!
     
+    @IBOutlet weak var BeerRun: UIButton!
     
     @IBOutlet weak var textarea: UITextField!
     @IBOutlet weak var textarea2: UITextField!
@@ -28,18 +29,34 @@ class BeerSelectionViewController: UIViewController {
         super.viewDidLoad()
         //austin, this is where the number of guest comes in from segue
         numPeopleLabel.text = "\(value)"
+        //print(newNames)
         
         // Do any additional setup after loading the view, typically from a nib.
 
     }
     
+    
+    @IBAction func BeerRunClicked(sender: AnyObject) {
+        self.performSegueWithIdentifier("PassList", sender: newNames)
+    }
+   
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if( segue.identifier == "PassList"){
+            let destination = (segue.destinationViewController as! FinalGuestListViewController)
+            destination.finalNames = newNames
+            
+            
+            
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func whenClicked(sender: AnyObject) {
-        let firstValue = Double(textarea.text!)
+        let firstValue = Double(numPeopleLabel.text!)
         let secondValue = Double(textarea2.text!)
         let thirdValue = Double(textarea3.text!)
         
