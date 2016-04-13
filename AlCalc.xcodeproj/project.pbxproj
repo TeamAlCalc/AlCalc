@@ -14,6 +14,10 @@
 		AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */; };
 		AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C8EF91CACA1D200265D0D /* Alcohol.swift */; };
 		AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */; };
+		AABB8FC71CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB8FC51CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld */; };
+		AABB8FC91CBF074F0099EDDD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB8FC81CBF074F0099EDDD /* DataController.swift */; };
+		AABB8FCC1CBF07AA0099EDDD /* Party+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB8FCA1CBF07AA0099EDDD /* Party+CoreDataProperties.swift */; };
+		AABB8FCD1CBF07AA0099EDDD /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB8FCB1CBF07AA0099EDDD /* Party.swift */; };
 		AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB21FC1C9A348C00035524 /* AppDelegate.swift */; };
 		AAEB22021C9A348C00035524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22001C9A348C00035524 /* Main.storyboard */; };
 		AAEB22041C9A348C00035524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22031C9A348C00035524 /* Assets.xcassets */; };
@@ -48,6 +52,10 @@
 		AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeViewController.swift; sourceTree = "<group>"; };
 		AA8C8EF91CACA1D200265D0D /* Alcohol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alcohol.swift; sourceTree = "<group>"; };
 		AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		AABB8FC61CBF05FD0099EDDD /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		AABB8FC81CBF074F0099EDDD /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		AABB8FCA1CBF07AA0099EDDD /* Party+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Party+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AABB8FCB1CBF07AA0099EDDD /* Party.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		AAEB21F91C9A348C00035524 /* AlCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB21FC1C9A348C00035524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAEB22011C9A348C00035524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +99,8 @@
 		AAEB21F01C9A348C00035524 = {
 			isa = PBXGroup;
 			children = (
+				AABB8FCA1CBF07AA0099EDDD /* Party+CoreDataProperties.swift */,
+				AABB8FCB1CBF07AA0099EDDD /* Party.swift */,
 				AAEB21FB1C9A348C00035524 /* AlCalc */,
 				AAEB22101C9A348C00035524 /* AlCalcTests */,
 				AAEB221B1C9A348C00035524 /* AlCalcUITests */,
@@ -124,6 +134,8 @@
 				AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */,
 				A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */,
 				A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */,
+				AABB8FC51CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld */,
+				AABB8FC81CBF074F0099EDDD /* DataController.swift */,
 			);
 			path = AlCalc;
 			sourceTree = "<group>";
@@ -283,9 +295,13 @@
 				AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */,
 				AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */,
 				AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */,
+				AABB8FC71CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld in Sources */,
+				AABB8FC91CBF074F0099EDDD /* DataController.swift in Sources */,
 				A9122D851CADBDEC00A98FC4 /* GuestListViewController.swift in Sources */,
 				AAF91B301CAC95520061D990 /* AgeValidViewController.swift in Sources */,
+				AABB8FCC1CBF07AA0099EDDD /* Party+CoreDataProperties.swift in Sources */,
 				AA5811C81CAC84C50060E27C /* User.swift in Sources */,
+				AABB8FCD1CBF07AA0099EDDD /* Party.swift in Sources */,
 				AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */,
 				AA20C2801CAA1E0900E9E0E7 /* BeerSelectionViewController.swift in Sources */,
 			);
@@ -535,6 +551,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AABB8FC51CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AABB8FC61CBF05FD0099EDDD /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = AABB8FC61CBF05FD0099EDDD /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AAEB21F11C9A348C00035524 /* Project object */;
 }

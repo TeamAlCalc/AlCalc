@@ -9,7 +9,6 @@
 
 import UIKit
 
-//var num : Int!
 
 class GuestListViewController : UIViewController, UITableViewDataSource {
     
@@ -25,7 +24,8 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
 
     
     var names = [String]()
-    var deletearray = [String]()
+   
+    //presents tableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +33,13 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     
     }
     
-    
+    //indicates number of names( allocates row)
   
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return names.count
     }
-    
+    //tells what string(names) will be in each row
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -51,7 +51,7 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     }
     
   
-   
+   //allows ability to swipe delete
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if editingStyle == .Delete {
@@ -65,13 +65,16 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     }
     
     
-    
+    // allows and action to be done, after cicking
     
     @IBAction func selectBeer(sender: AnyObject) {
         self.performSegueWithIdentifier("passInt", sender: names.count)
         
    
     }
+    
+    // performs segue between GuestListViewController -> BeerSelectionViewController (so count of people, appears on label, in
+    // BeerSelectionViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if( segue.identifier == "passInt"){
@@ -82,6 +85,7 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
             
         }
     }
+    //allows textfield to appear, where one can type in names of desired guest
     
     @IBAction func addPressed(sender: AnyObject?) {
         
@@ -108,7 +112,6 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
         alert.addAction(okaction)
         
         
-        //print(num)
         
         
         self.presentViewController(alert, animated: true, completion: nil)
