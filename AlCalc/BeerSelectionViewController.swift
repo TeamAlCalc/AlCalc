@@ -11,16 +11,21 @@ import UIKit
 class BeerSelectionViewController: UIViewController {
     
     @IBOutlet weak var numPeopleLabel: UILabel!
-    var newNames : [String]!
-    var value:Int!
+    
+    var newNames : [String]! //Gets string of guests from GuestListViewController
+    
+    var value:Int! //Number value of guests
     
     @IBOutlet weak var BeerRun: UIButton!
     
     @IBOutlet weak var textarea: UITextField!
+    
     @IBOutlet weak var textarea2: UITextField!
+    
     @IBOutlet weak var textarea3: UITextField!
     
     @IBOutlet weak var priceDisplay: UILabel!
+    
     @IBOutlet weak var canLabel: UILabel!
     
     @IBOutlet weak var showCalc: UIButton!
@@ -56,18 +61,21 @@ class BeerSelectionViewController: UIViewController {
     }
     
     @IBAction func whenClicked(sender: AnyObject) {
-        let firstValue = Double(numPeopleLabel.text!)
-        let secondValue = Double(textarea2.text!)
-        let thirdValue = Double(textarea3.text!)
         
-        let priceValue = Double(secondValue! / firstValue!)
+        let firstValue = Double(numPeopleLabel.text!)
+        
+        let secondValue = Double(textarea2.text!) //Gets beer price value
+        
+        let thirdValue = Double(textarea3.text!) //Gets beer quantity value
+        
+        let priceValue = Double(secondValue! / firstValue!) //Total price based on number of friends
 
-        let cans = Double(thirdValue! / firstValue!)
+        let cans = Double(thirdValue! / firstValue!) //Number of beer cans each guest will recieve
         
         let roundValue = Double(round(priceValue*100)/100)
         
         let cansForEach = String(format: "%.f", cans)
-        let remCans = (thirdValue! % firstValue!)
+        let remCans = (thirdValue! % firstValue!) //Calculates any remaining beer cans
         
         priceDisplay.text = "Price for each: $\(roundValue)"
         

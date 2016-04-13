@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomepageViewController: UIViewController {
     
@@ -20,7 +21,7 @@ class HomepageViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //homepageHeaderLabel.text = toPass
-        
+        loadParties()
     }
     
 
@@ -34,5 +35,44 @@ class HomepageViewController: UIViewController {
         
     }
     
+    func addParty() {
+    
+        let moc = DataController().managedObjectContext
+    
+        // we set up our entity by selecting the entity and context that we're targeting
+        let entity = NSEntityDescription.insertNewObjectForEntityForName("Party", inManagedObjectContext: moc) as! Party
+    
+        // add our data
+        entity.setValue("Dick", forKey: "guestList")
+        entity.setValue("Vag", forKey: "purchasedBeer")
+        entity.setValue(NSDate(), forKey: "date")
+        entity.setValue(5, forKey: "numberOfGuests")
+    
+    
+        // we save our entity
+        do {
+            try moc.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
+    }
+    
+    func loadParties(){
+    
+    
+        let moc = DataController().managedObjectContext
+        let partyFetch = NSFetchRequest(entityName: "Party")
+    
+        do {
+            var parties = try moc.executeFetchRequest(partyFetch) as! [Party]
+            print(parties[0].guestList)
+    
+        } catch {
+           fatalError("Failure to save context: \(error)")
+        }
+       
+    }
+    
 }
+
 
