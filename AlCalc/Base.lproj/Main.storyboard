@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gft-ba-Ubb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6c1-8t-zTT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -77,7 +77,11 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Homepage" id="8zC-q2-mIe"/>
-                                    <barButtonItem title="Current" width="74.5" id="a5w-zS-fS9"/>
+                                    <barButtonItem title="Current" width="74.5" id="a5w-zS-fS9">
+                                        <connections>
+                                            <action selector="currentPartyDockPress:" destination="Gft-ba-Ubb" id="Ph6-eU-p7e"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Notifications" id="RvB-8i-II3"/>
                                     <barButtonItem title="Settings" width="86" id="V0S-lx-Lp1"/>
                                 </items>
@@ -107,9 +111,11 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="currentPartyDockButton" destination="a5w-zS-fS9" id="VWi-Qz-Hau"/>
                         <outlet property="homepageHeaderLabel" destination="zBu-AE-kXZ" id="n5U-aM-Ven"/>
                         <outlet property="newPartyButton" destination="AKG-ks-KIZ" id="bak-QW-B2i"/>
                         <segue destination="6c1-8t-zTT" kind="show" identifier="NewParty" id="c4C-vP-pXJ"/>
+                        <segue destination="lvk-LR-vyX" kind="show" identifier="DockCurrent" id="a2F-js-Gh8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilx-O0-fo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -337,10 +343,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zz-Eg-PJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833.5" y="384.5"/>
+            <point key="canvasLocation" x="1350.5" y="1216.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="b1E-pz-AiX"/>
+        <segue reference="a2F-js-Gh8"/>
     </inferredMetricsTieBreakers>
 </document>

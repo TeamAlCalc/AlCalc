@@ -12,6 +12,8 @@ class BeerSelectionViewController: UIViewController {
     
     @IBOutlet weak var numPeopleLabel: UILabel!
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     var newNames : [String]! //Gets string of guests from GuestListViewController
     
     var value:Int! //Number value of guests
@@ -50,8 +52,9 @@ class BeerSelectionViewController: UIViewController {
         if( segue.identifier == "PassList"){
             let destination = (segue.destinationViewController as! FinalGuestListViewController)
             destination.finalNames = newNames
-            
-            
+            destination.dateCreated = NSDate()
+            userDefaults.setObject(true, forKey: "currentParty")
+            userDefaults.synchronize()
             
         }
     }

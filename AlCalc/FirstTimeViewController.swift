@@ -9,6 +9,7 @@
 import UIKit
 
 var beerList: [Alcohol] = []
+var currentParty: Bool!
 
 class FirstTimeViewController: UIViewController {
 
@@ -30,6 +31,7 @@ class FirstTimeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         if AgeValidated{
+            currentParty = loadCurrentParty()
             dispatch_async(dispatch_get_main_queue()){
                 self.performSegueWithIdentifier("AgeValid", sender: self)
             }
@@ -49,7 +51,10 @@ class FirstTimeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
 
     }
-    
+    func loadCurrentParty() -> Bool? {
+        return userDefaults.objectForKey("currentParty") as? Bool
+        
+    }
     func loadDob() -> String? {
         return userDefaults.objectForKey("dob") as? String
         

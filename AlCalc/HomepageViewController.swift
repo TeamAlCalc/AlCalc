@@ -9,7 +9,12 @@
 import UIKit
 import CoreData
 
+
+
 class HomepageViewController: UIViewController {
+    
+
+    @IBOutlet weak var currentPartyDockButton: UIBarButtonItem!
     
     var toPass: String!
 
@@ -21,7 +26,8 @@ class HomepageViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //homepageHeaderLabel.text = toPass
-        loadParties()
+        //addParty()
+        //loadParties()
     }
     
 
@@ -35,20 +41,33 @@ class HomepageViewController: UIViewController {
         
     }
     
+    @IBAction func currentPartyDockPress(sender: AnyObject) {
+        if currentParty == true {
+            performSegueWithIdentifier("DockCurrent", sender: nil)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "There is no current Party.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
     func addParty() {
     
         let moc = DataController().managedObjectContext
     
         // we set up our entity by selecting the entity and context that we're targeting
         let entity = NSEntityDescription.insertNewObjectForEntityForName("Party", inManagedObjectContext: moc) as! Party
+        
+        
     
         // add our data
-        entity.setValue("Dick", forKey: "guestList")
-        entity.setValue("Vag", forKey: "purchasedBeer")
+        entity.setValue(["Dick","Richard"], forKey: "guestList")
+        entity.setValue(["bud"], forKey: "purchasedBeer")
         entity.setValue(NSDate(), forKey: "date")
         entity.setValue(5, forKey: "numberOfGuests")
-    
-    
+        
+
         // we save our entity
         do {
             try moc.save()
@@ -65,7 +84,11 @@ class HomepageViewController: UIViewController {
     
         do {
             var parties = try moc.executeFetchRequest(partyFetch) as! [Party]
-            print(parties[0].guestList)
+            if parties.count > 0 {
+              print(parties[0].guestList[1])
+            } else {
+                print("Empty List")
+            }
     
         } catch {
            fatalError("Failure to save context: \(error)")

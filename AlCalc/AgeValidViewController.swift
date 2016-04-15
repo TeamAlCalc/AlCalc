@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class AgeValidViewController: UIViewController {
 
 
@@ -36,12 +38,7 @@ class AgeValidViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        let dob = loadDob()
-        if dob != nil {
-            print("Loaded User")
 
-            performSegueWithIdentifier("Homepage", sender: nil)
-        }
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -78,6 +75,7 @@ class AgeValidViewController: UIViewController {
              alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
             alert.addAction(UIAlertAction(title: "I Agree", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
                 self.saveDob()
+                currentParty = false
                 self.performSegueWithIdentifier("Homepage", sender: nil)
                 
             }))
@@ -95,13 +93,11 @@ class AgeValidViewController: UIViewController {
     }
     
     func saveDob(){
+        userDefaults.setObject(false, forKey: "currentParty")
         userDefaults.setObject(dateOfBirth, forKey: "dob")
         userDefaults.synchronize()
     }
-    func loadDob() -> String? {
-        return userDefaults.objectForKey("dob") as? String
-        
-    }
+
     
 
 
