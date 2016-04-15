@@ -9,7 +9,7 @@
 
 import UIKit
 
-class FinalGuestListViewController : UIViewController,UITableViewDataSource {
+class FinalGuestListViewController : UIViewController,UITableViewDataSource, UITableViewDelegate{
     
     var finalNames : [String]!
     
@@ -17,6 +17,8 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tview.delegate = self
+        tview.dataSource = self
         tview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
     }
@@ -24,73 +26,39 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource {
     
     
     func tableView(tview: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
-            return finalNames.count
+                   numberOfRowsInSection section: Int) -> Int {
+        return finalNames.count
     }
     
     
     func tableView(tview: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell =
-        tview.dequeueReusableCellWithIdentifier("Cell")
+            tview.dequeueReusableCellWithIdentifier("Cell")
         cell!.textLabel!.text = finalNames[indexPath.row]
         
         return cell!
     }
     
-    
-    /*
-    
-    func tableView(tview: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
-        if editingStyle == .Delete {
-            self.finalNames.removeAtIndex(indexPath.row)
-            self.tview.reloadData()
+    func tableView(tview: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        let green = UIColor(red: 0, green: 255, blue: 0, alpha: 0.25)
+        tview.deselectRowAtIndexPath(indexPath, animated: true)
+        let cell = tview.cellForRowAtIndexPath(indexPath)
+        if cell!.backgroundColor != green{
+            cell!.backgroundColor = green
+        } else {
+            cell!.backgroundColor = green
         }
     }
-    */
-    /*
-    func Done (self.UITableViewRowAction!,
-        NSIndexPath!)->Void{
-            
-    }
-*/
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-     func tableView(tview: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        
-        var more = UITableViewRowAction(style: .Normal, title: "More") {(action: UITableViewRowAction!, indexPath: NSIndexPath!)-> Void in
-           
-            var firstActivityItem = self.finalNames[indexPath.row]
-            
-            var activityViewController = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
-            self.presentViewController(activityViewController, animated: true, completion:nil)
-        }
-        more.backgroundColor = UIColor.lightGrayColor()
-        
-        //let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
-         //   print ("favorite button tapped")
-       // }
-       // favorite.backgroundColor = UIColor.orangeColor()
-        
-       // let share = UITableViewRowAction(style: .Normal, title: "Share") { action, index in
-        //    print("share button tapped")
-        //}
-        //share.backgroundColor = UIColor.blueColor()
-        
-        return [more]
-    }
-    func tableView(tview: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // the cells you would like the actions to appear needs to be editable
-        return true
-    }
     
-    func tableView(tview: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        // you need to implement this method too or you can't swipe to display the actions
-    }
-
-  
+    
+    
     
 }
