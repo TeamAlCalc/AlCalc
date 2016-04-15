@@ -47,7 +47,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         if cell!.backgroundColor != green{
             cell!.backgroundColor = green
         } else {
-            cell!.backgroundColor = green
+            cell!.backgroundColor = UIColor.clearColor()
         }
     }
     

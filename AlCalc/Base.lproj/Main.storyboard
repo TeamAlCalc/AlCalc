@@ -110,6 +110,7 @@
                         <outlet property="homepageHeaderLabel" destination="zBu-AE-kXZ" id="n5U-aM-Ven"/>
                         <outlet property="newPartyButton" destination="AKG-ks-KIZ" id="bak-QW-B2i"/>
                         <segue destination="6c1-8t-zTT" kind="show" identifier="NewParty" id="c4C-vP-pXJ"/>
+                        <segue destination="lvk-LR-vyX" kind="show" identifier="DockCurrentParty" id="AMp-XE-2eM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilx-O0-fo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -337,10 +338,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zz-Eg-PJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833.5" y="384.5"/>
+            <point key="canvasLocation" x="1350.5" y="1264.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="b1E-pz-AiX"/>
+        <segue reference="AMp-XE-2eM"/>
     </inferredMetricsTieBreakers>
 </document>
