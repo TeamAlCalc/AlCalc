@@ -17,7 +17,6 @@ extension Party {
     @NSManaged var guestList: String?
     @NSManaged var purchasedBeer: String?
     @NSManaged var date: NSDate?
-    @NSManaged var numberOfGuests: NSNumber?
 
 }
 

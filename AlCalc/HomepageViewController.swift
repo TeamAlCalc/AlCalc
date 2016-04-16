@@ -46,7 +46,6 @@ class HomepageViewController: UIViewController {
         entity.setValue("Dick", forKey: "guestList")
         entity.setValue("Vag", forKey: "purchasedBeer")
         entity.setValue(NSDate(), forKey: "date")
-        entity.setValue(5, forKey: "numberOfGuests")
     
     
         // we save our entity
