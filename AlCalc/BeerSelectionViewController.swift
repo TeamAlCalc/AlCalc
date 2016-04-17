@@ -18,7 +18,7 @@ class BeerSelectionViewController: UIViewController {
     
     var beer: [String] = ["Bud"]
     
-    var payed: [Bool] = [true]
+    var payed: [Bool]!
     
     var value:Int! //Number value of guests
     
@@ -35,6 +35,13 @@ class BeerSelectionViewController: UIViewController {
     @IBOutlet weak var canLabel: UILabel!
     
     @IBOutlet weak var showCalc: UIButton!
+    
+    var firstValue: Double!
+    var secondValue: Double!
+    var thirdValue: Double!
+    var priceValue: Double!
+    var cans: Double!
+    var roundValue: Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +61,17 @@ class BeerSelectionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if( segue.identifier == "PassList"){
+            currentPartyFL = true
             userDefaults.setObject(newNames, forKey:"currentPartyGuestList")
             userDefaults.setObject(payed, forKey: "currentPartyPayed")
             userDefaults.setObject(beer, forKey: "currentPartyBeerList")
             userDefaults.setObject(NSDate(), forKey: "currentPartyDate")
+            
+            userDefaults.setObject(canLabel.text, forKey: "currentCanLabel")
+            userDefaults.setObject(priceDisplay.text, forKey: "currentPriceLabel")
+            
+            userDefaults.setObject(currentPartyFL, forKey:"currentPartyFL")
+            userDefaults.synchronize()
          
         }
     }
@@ -68,17 +82,17 @@ class BeerSelectionViewController: UIViewController {
     
     @IBAction func whenClicked(sender: AnyObject) {
         
-        let firstValue = Double(numPeopleLabel.text!)
+        firstValue = Double(numPeopleLabel.text!)
         
-        let secondValue = Double(textarea2.text!) //Gets beer price value
+        secondValue = Double(textarea2.text!) //Gets beer price value
         
-        let thirdValue = Double(textarea3.text!) //Gets beer quantity value
+        thirdValue = Double(textarea3.text!) //Gets beer quantity value
         
-        let priceValue = Double(secondValue! / firstValue!) //Total price based on number of friends
+        priceValue = Double(secondValue! / firstValue!) //Total price based on number of friends
 
-        let cans = Double(thirdValue! / firstValue!) //Number of beer cans each guest will recieve
+        cans = Double(thirdValue! / firstValue!) //Number of beer cans each guest will recieve
         
-        let roundValue = Double(round(priceValue*100)/100)
+        roundValue = Double(round(priceValue*100)/100)
         
         let cansForEach = String(format: "%.f", cans)
         let remCans = (thirdValue! % firstValue!) //Calculates any remaining beer cans
