@@ -32,7 +32,7 @@ class FirstTimeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         if AgeValidated{
-            currentPartyFL = (userDefaults.objectForKey("currentPartyFL") as? Bool)!
+            currentPartyFL = userDefaults.objectForKey("currentPartyFL") as! Bool
             dispatch_async(dispatch_get_main_queue()){
                 self.performSegueWithIdentifier("AgeValid", sender: self)
             }

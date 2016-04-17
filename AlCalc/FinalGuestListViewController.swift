@@ -14,8 +14,13 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
     
     var finalNames : [String]!
     var purchasedBeer: [String]!
+    var payed: [Bool]!
     var date: NSDate!
+    let green = UIColor(red: 0, green: 255, blue: 0, alpha: 0.25)
     
+    @IBOutlet weak var partyOver: UIButton!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var canLabel: UILabel!
     @IBOutlet weak var tview: UITableView!
     
     @IBOutlet weak var dockHomepageButton: UIToolbar!
@@ -23,28 +28,28 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
     @IBAction func dockHomepageSegue(sender: AnyObject) {
         performSegueWithIdentifier("DockCurrentToHomepage", sender: nil)
     }
+    
+    @IBAction func endTheParty(sender: AnyObject) {
+        addParty()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if currentPartyFL == false {
-            tview.delegate = self
-            tview.dataSource = self
-            tview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-            currentPartyFL = true
-            userDefaults.setObject(tview,forKey: "table")
-        } else {
-            tview = userDefaults.objectForKey("table") as! UITableView
-        }
+        tview.delegate = self
+        tview.dataSource = self
+        tview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+
         finalNames = userDefaults.objectForKey("currentPartyGuestList") as! [String]
+        payed = userDefaults.objectForKey("currentPartyPayed") as! [Bool]
         purchasedBeer = userDefaults.objectForKey("currentPartyBeerList") as! [String]
         date = userDefaults.objectForKey("currentPartyDate") as! NSDate
-        userDefaults.synchronize()
+        
+        priceLabel.text = (userDefaults.objectForKey("currentPriceLabel") as! String)
+        canLabel.text = (userDefaults.objectForKey("currentCanLabel") as! String)
         
     }
     
-    
-    
-    func tableView(tview: UITableView,
-                   numberOfRowsInSection section: Int) -> Int {
+    func tableView(tview: UITableView, numberOfRowsInSection section: Int) -> Int {
         return finalNames.count
     }
     
@@ -54,20 +59,26 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         let cell =
             tview.dequeueReusableCellWithIdentifier("Cell")
         cell!.textLabel!.text = finalNames[indexPath.row]
+        if payed[indexPath.row] == true {
+            cell!.backgroundColor = green
+        }
         
         return cell!
     }
     
     func tableView(tview: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let green = UIColor(red: 0, green: 255, blue: 0, alpha: 0.25)
         tview.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tview.cellForRowAtIndexPath(indexPath)
+        
         if cell!.backgroundColor != green{
             cell!.backgroundColor = green
+            payed[indexPath.row] = true
         } else {
             cell!.backgroundColor = UIColor.clearColor()
+            payed[indexPath.row] = false
         }
-        userDefaults.setObject(tview,forKey: "table")
+        userDefaults.setObject(payed, forKey: "currentPartyPayed")
+        userDefaults.synchronize()
     }
     
     
@@ -84,9 +95,12 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         let entity = NSEntityDescription.insertNewObjectForEntityForName("Party", inManagedObjectContext: moc) as! Party
         
         // add our data
-        entity.setValue(finalNames, forKey: "guestList")
-        entity.setValue(purchasedBeer, forKey: "purchasedBeer")
+        entity.setValue(finalNames!, forKey: "guestList")
+        entity.setValue(payed!, forKey: "payed")
+        entity.setValue(purchasedBeer!, forKey: "purchasedBeer")
         entity.setValue(date, forKey: "date")
+        entity.setValue(priceLabel.text, forKey: "price")
+        entity.setValue(canLabel.text, forKey: "cans")
         
         
         // we save our entity
@@ -98,6 +112,30 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         } catch {
             fatalError("Failure to save context: \(error)")
         }
+        var alert = false
+        for flag in payed {
+            if flag == false {
+                alert = true;
+            }
+        }
+        if alert == true {
+            
+            var reminder = UILocalNotification()
+            
+            reminder.fireDate = NSDate(timeIntervalSinceNow: 10)
+            reminder.repeatInterval = NSCalendarUnit.Day
+            reminder.alertBody = "Somebody hasn't payed bruh..."
+            reminder.timeZone = NSTimeZone.defaultTimeZone()
+            reminder.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(reminder)
+            
+            print("alert set~~~~~~")
+            
+        }
+
+        performSegueWithIdentifier("DockCurrentToHomepage", sender: nil)
+        
     }
     
     

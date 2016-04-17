@@ -46,7 +46,15 @@ class HomepageViewController: UIViewController {
     }
     
     @IBAction func newParty(sender: AnyObject) {
-        performSegueWithIdentifier("NewParty", sender: nil)
+        if currentPartyFL == false {
+            performSegueWithIdentifier("NewParty", sender: nil)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "There is already a party going! Don't want party too hard...", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
     }
     

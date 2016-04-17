@@ -88,11 +88,12 @@ class AgeValidViewController: UIViewController {
     }
     
     func saveDob(){
-        userDefaults.setObject(dateOfBirth, forKey: "dob")
-        userDefaults.setObject(false, forKey: "currentPartyFL")
         currentPartyFL = false
+        userDefaults.setObject(dateOfBirth, forKey: "dob")
+        userDefaults.setObject(currentPartyFL, forKey: "currentPartyFL")
         userDefaults.synchronize()
     }
+    
     func loadDob() -> String? {
         return userDefaults.objectForKey("dob") as? String
         

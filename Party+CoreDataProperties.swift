@@ -18,6 +18,8 @@ extension Party {
     @NSManaged var purchasedBeer: [String]?
     @NSManaged var payed: [Bool]?
     @NSManaged var date: NSDate?
+    @NSManaged var price: String?
+    @NSManaged var cans: String?
 
 }
 

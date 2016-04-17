@@ -12,16 +12,12 @@ import UIKit
 
 class GuestListViewController : UIViewController, UITableViewDataSource {
     
-    @IBAction func cancelToGuestListViewController(segue: UIStoryboardSegue){
-        
-    }
+    @IBAction func cancelToGuestListViewController(segue: UIStoryboardSegue){}
     @IBOutlet weak var addButton: UIBarButtonItem!
-
     @IBOutlet weak var selectButton: UIButton!
-    
     @IBOutlet weak var tableView: UITableView!
     
-
+    var payed: [Bool] = []
     
     var names = [String]()
    
@@ -69,8 +65,6 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     
     @IBAction func selectBeer(sender: AnyObject) {
         self.performSegueWithIdentifier("passInt", sender: names.count)
-        
-   
     }
     
     // performs segue between GuestListViewController -> BeerSelectionViewController (so count of people, appears on label, in
@@ -79,10 +73,9 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
         
         if( segue.identifier == "passInt"){
             let destination = (segue.destinationViewController as! BeerSelectionViewController)
-                destination.value = names.count
-                destination.newNames = names
-
-            
+            destination.value = names.count
+            destination.newNames = names
+            destination.payed = payed
             
         }
     }
@@ -92,29 +85,23 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
         
         let alert = UIAlertController(title: "Add Guest", message: "Add Names of Guest", preferredStyle: UIAlertControllerStyle.Alert)
         
-               let okaction = UIAlertAction(title: "Okay", style: .Default,
+        let okaction = UIAlertAction(title: "Add", style: .Default,
             handler: {(action: UIAlertAction!) -> Void in
-                
                 let textField = alert.textFields!.first
                 self.names.append(textField!.text!)
                 self.tableView.reloadData()
+                self.payed.append(false)
             })
         let cancelaction = UIAlertAction(title: "Cancel", style: .Default) { (action: UIAlertAction) -> Void in
         }
         
-        
-
-        
-        alert.addTextFieldWithConfigurationHandler {(textField : UITextField!) -> Void in
+       alert.addTextFieldWithConfigurationHandler {(textField : UITextField!) -> Void in
             textField.placeholder = "Drinking Buds"
             
     }
         alert.addAction(cancelaction)
         alert.addAction(okaction)
-        
-        
-        
-        
+
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
