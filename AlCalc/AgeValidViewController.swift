@@ -8,6 +8,8 @@
 
 import UIKit
 
+let calendar : NSCalendar = NSCalendar.currentCalendar()
+
 class AgeValidViewController: UIViewController {
 
 
@@ -23,7 +25,6 @@ class AgeValidViewController: UIViewController {
     
     var dateOfBirth: String!
     
-    var calendar : NSCalendar = NSCalendar.currentCalendar()
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
@@ -36,18 +37,10 @@ class AgeValidViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        let dob = loadDob()
-        if dob != nil {
-            print("Loaded User")
-
-            performSegueWithIdentifier("Homepage", sender: nil)
-        }
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
         datePicker.addTarget(self, action:nil, forControlEvents: UIControlEvents.ValueChanged)
-        
         
     }
 
@@ -96,6 +89,8 @@ class AgeValidViewController: UIViewController {
     
     func saveDob(){
         userDefaults.setObject(dateOfBirth, forKey: "dob")
+        userDefaults.setObject(false, forKey: "currentPartyFL")
+        currentPartyFL = false
         userDefaults.synchronize()
     }
     func loadDob() -> String? {

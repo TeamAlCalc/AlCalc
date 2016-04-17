@@ -81,6 +81,7 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
             let destination = (segue.destinationViewController as! BeerSelectionViewController)
                 destination.value = names.count
                 destination.newNames = names
+
             
             
         }
@@ -91,7 +92,7 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
         
         let alert = UIAlertController(title: "Add Guest", message: "Add Names of Guest", preferredStyle: UIAlertControllerStyle.Alert)
         
-               let okaction = UIAlertAction(title: "Ok", style: .Default,
+               let okaction = UIAlertAction(title: "Okay", style: .Default,
             handler: {(action: UIAlertAction!) -> Void in
                 
                 let textField = alert.textFields!.first
