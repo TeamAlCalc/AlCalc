@@ -77,7 +77,11 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Homepage" id="8zC-q2-mIe"/>
-                                    <barButtonItem title="Current" width="74.5" id="a5w-zS-fS9"/>
+                                    <barButtonItem title="Current" width="74.5" id="a5w-zS-fS9">
+                                        <connections>
+                                            <action selector="dockCurrentPartySegue:" destination="Gft-ba-Ubb" id="eqR-Lb-cdl"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Notifications" id="RvB-8i-II3"/>
                                     <barButtonItem title="Settings" width="86" id="V0S-lx-Lp1"/>
                                 </items>
@@ -107,10 +111,11 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="dockCurrentPartyButton" destination="a5w-zS-fS9" id="LUv-aq-vrm"/>
                         <outlet property="homepageHeaderLabel" destination="zBu-AE-kXZ" id="n5U-aM-Ven"/>
                         <outlet property="newPartyButton" destination="AKG-ks-KIZ" id="bak-QW-B2i"/>
                         <segue destination="6c1-8t-zTT" kind="show" identifier="NewParty" id="c4C-vP-pXJ"/>
-                        <segue destination="lvk-LR-vyX" kind="show" identifier="DockCurrentParty" id="AMp-XE-2eM"/>
+                        <segue destination="lvk-LR-vyX" kind="show" identifier="DockHomepageToaCurrent" id="AMp-XE-2eM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilx-O0-fo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -303,10 +308,10 @@
             </objects>
             <point key="canvasLocation" x="1350.5" y="384.5"/>
         </scene>
-        <!--Final Guest List View Controller-->
+        <!--FinalGuestListViewController-->
         <scene sceneID="uqW-aO-4Yu">
             <objects>
-                <viewController id="lvk-LR-vyX" customClass="FinalGuestListViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FinalGuestListViewController" id="lvk-LR-vyX" customClass="FinalGuestListViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aNB-Ov-FHK"/>
                         <viewControllerLayoutGuide type="bottom" id="hPb-FY-Pgq"/>
@@ -328,11 +333,26 @@
                                     <outlet property="dataSource" destination="lvk-LR-vyX" id="uvH-YE-WHx"/>
                                 </connections>
                             </tableView>
+                            <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="400" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xS-Ym-QUX">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Homepage" id="7WY-SP-LbI">
+                                        <connections>
+                                            <action selector="dockHomepageSegue:" destination="lvk-LR-vyX" id="cd0-h4-pdA"/>
+                                            <segue destination="Gft-ba-Ubb" kind="show" identifier="DockCurrentToHomepage" id="RbV-Xp-I34"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Current" width="74.5" id="ycK-3A-4dQ"/>
+                                    <barButtonItem title="Notifications" id="zGs-OI-u86"/>
+                                    <barButtonItem title="Settings" width="86" id="GcE-rf-5ur"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="dockHomepageButton" destination="0xS-Ym-QUX" id="hdu-px-76F"/>
                         <outlet property="tview" destination="gf3-ES-aOg" id="bhe-sf-x0L"/>
                     </connections>
                 </viewController>
@@ -342,7 +362,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="b1E-pz-AiX"/>
+        <segue reference="RbV-Xp-I34"/>
         <segue reference="AMp-XE-2eM"/>
     </inferredMetricsTieBreakers>
 </document>

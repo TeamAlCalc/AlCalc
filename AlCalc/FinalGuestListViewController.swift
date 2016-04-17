@@ -7,19 +7,37 @@
 //
 
 
-import UIKit
+import UIKit; import CoreData
+
 
 class FinalGuestListViewController : UIViewController,UITableViewDataSource, UITableViewDelegate{
     
     var finalNames : [String]!
+    var purchasedBeer: [String]!
+    var date: NSDate!
     
     @IBOutlet weak var tview: UITableView!
     
+    @IBOutlet weak var dockHomepageButton: UIToolbar!
+    
+    @IBAction func dockHomepageSegue(sender: AnyObject) {
+        performSegueWithIdentifier("DockCurrentToHomepage", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tview.delegate = self
-        tview.dataSource = self
-        tview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        if currentPartyFL == false {
+            tview.delegate = self
+            tview.dataSource = self
+            tview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+            currentPartyFL = true
+            userDefaults.setObject(tview,forKey: "table")
+        } else {
+            tview = userDefaults.objectForKey("table") as! UITableView
+        }
+        finalNames = userDefaults.objectForKey("currentPartyGuestList") as! [String]
+        purchasedBeer = userDefaults.objectForKey("currentPartyBeerList") as! [String]
+        date = userDefaults.objectForKey("currentPartyDate") as! NSDate
+        userDefaults.synchronize()
         
     }
     
@@ -49,12 +67,37 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         } else {
             cell!.backgroundColor = UIColor.clearColor()
         }
+        userDefaults.setObject(tview,forKey: "table")
     }
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func addParty() {
+        
+        let moc = DataController().managedObjectContext
+        
+        // we set up our entity by selecting the entity and context that we're targeting
+        let entity = NSEntityDescription.insertNewObjectForEntityForName("Party", inManagedObjectContext: moc) as! Party
+        
+        // add our data
+        entity.setValue(finalNames, forKey: "guestList")
+        entity.setValue(purchasedBeer, forKey: "purchasedBeer")
+        entity.setValue(date, forKey: "date")
+        
+        
+        // we save our entity
+        do {
+            try moc.save()
+            currentPartyFL = false
+            userDefaults.setObject(false, forKey: "currentPartyFL")
+            userDefaults.synchronize()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
     }
     
     

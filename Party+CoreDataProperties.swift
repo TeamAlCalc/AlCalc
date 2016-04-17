@@ -14,8 +14,9 @@ import CoreData
 
 extension Party {
 
-    @NSManaged var guestList: String?
-    @NSManaged var purchasedBeer: String?
+    @NSManaged var guestList: [String]?
+    @NSManaged var purchasedBeer: [String]?
+    @NSManaged var payed: [Bool]?
     @NSManaged var date: NSDate?
 
 }

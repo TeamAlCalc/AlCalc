@@ -17,11 +17,26 @@ class HomepageViewController: UIViewController {
     
     @IBOutlet weak var homepageHeaderLabel: UILabel!
     
+    @IBOutlet weak var dockCurrentPartyButton: UIBarButtonItem!
+    
+    @IBAction func dockCurrentPartySegue(sender: AnyObject) {
+        if currentPartyFL == true {
+            performSegueWithIdentifier("DockHomepageToaCurrent", sender: nil)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "There is no current party.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //homepageHeaderLabel.text = toPass
+        //addParty()
         //loadParties()
+        
     }
     
 
@@ -35,26 +50,7 @@ class HomepageViewController: UIViewController {
         
     }
     
-    func addParty() {
-    
-        let moc = DataController().managedObjectContext
-    
-        // we set up our entity by selecting the entity and context that we're targeting
-        let entity = NSEntityDescription.insertNewObjectForEntityForName("Party", inManagedObjectContext: moc) as! Party
-    
-        // add our data
-        entity.setValue("Dick", forKey: "guestList")
-        entity.setValue("Vag", forKey: "purchasedBeer")
-        entity.setValue(NSDate(), forKey: "date")
-    
-    
-        // we save our entity
-        do {
-            try moc.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
-    }
+
     
     func loadParties(){
     

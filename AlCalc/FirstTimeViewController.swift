@@ -9,11 +9,13 @@
 import UIKit
 
 var beerList: [Alcohol] = []
+var currentPartyFL: Bool = false
+let userDefaults = NSUserDefaults.standardUserDefaults()
 
 class FirstTimeViewController: UIViewController {
 
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     var AgeValidated = false
     
     var values: [AnyObject] = []
@@ -30,6 +32,7 @@ class FirstTimeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         if AgeValidated{
+            currentPartyFL = (userDefaults.objectForKey("currentPartyFL") as? Bool)!
             dispatch_async(dispatch_get_main_queue()){
                 self.performSegueWithIdentifier("AgeValid", sender: self)
             }

@@ -8,11 +8,17 @@
 
 import UIKit
 
+import CoreData
+
 class BeerSelectionViewController: UIViewController {
     
     @IBOutlet weak var numPeopleLabel: UILabel!
     
     var newNames : [String]! //Gets string of guests from GuestListViewController
+    
+    var beer: [String] = ["Bud"]
+    
+    var payed: [Bool] = [true]
     
     var value:Int! //Number value of guests
     
@@ -48,11 +54,11 @@ class BeerSelectionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if( segue.identifier == "PassList"){
-            let destination = (segue.destinationViewController as! FinalGuestListViewController)
-            destination.finalNames = newNames
-            
-            
-            
+            userDefaults.setObject(newNames, forKey:"currentPartyGuestList")
+            userDefaults.setObject(payed, forKey: "currentPartyPayed")
+            userDefaults.setObject(beer, forKey: "currentPartyBeerList")
+            userDefaults.setObject(NSDate(), forKey: "currentPartyDate")
+         
         }
     }
     override func didReceiveMemoryWarning() {
@@ -88,6 +94,8 @@ class BeerSelectionViewController: UIViewController {
             
         }
     }
+    
+
     
 }
 
