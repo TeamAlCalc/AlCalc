@@ -371,6 +371,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTv-dN-Bv4">
+                                <rect key="frame" x="258" y="578" width="106" height="30"/>
+                                <state key="normal" title="Party's Over"/>
+                                <connections>
+                                    <action selector="endTheParty:" destination="lvk-LR-vyX" eventType="touchUpInside" id="i4R-Gc-JKV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -378,6 +385,7 @@
                     <connections>
                         <outlet property="canLabel" destination="IrD-Mb-9Xv" id="Npl-qS-y8x"/>
                         <outlet property="dockHomepageButton" destination="0xS-Ym-QUX" id="hdu-px-76F"/>
+                        <outlet property="partyOver" destination="dTv-dN-Bv4" id="xut-vO-Trq"/>
                         <outlet property="priceLabel" destination="IrD-Mb-9Xv" id="n0V-xR-fjR"/>
                         <outlet property="tview" destination="gf3-ES-aOg" id="bhe-sf-x0L"/>
                     </connections>
