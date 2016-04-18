@@ -14,13 +14,10 @@ let userDefaults = NSUserDefaults.standardUserDefaults()
 
 class FirstTimeViewController: UIViewController {
 
-    
-    
     var AgeValidated = false
     
     var values: [AnyObject] = []
     
-
     override func viewDidLoad() {
         let dob = loadDob()
         if dob != nil {

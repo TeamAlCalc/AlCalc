@@ -26,6 +26,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     
     var value:Int! //Number value of guests
     
+    @IBOutlet weak var abvLabel: UILabel!
     @IBOutlet weak var BeerRun: UIButton!
     @IBOutlet weak var priceDisplay: UILabel!
     @IBOutlet weak var canLabel: UILabel!
@@ -36,11 +37,16 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     var numOfGuests: Double!
     var beerPrice = 0.0
     var beerQty = 0.0
+    var beerAbv = 0.0
     var priceValue: Double!
     var cans: Double!
     var roundValue: Double!
     
+    let borderColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1.0)
+    
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         beerListTable.dataSource = self
         beerListTable.delegate = self
@@ -49,12 +55,10 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         chosenBeer.delegate = self
         chosenBeer.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell2")
         numOfGuests = Double(newNames.count)
-        beerListTable.layer.borderWidth = 1.0
-        chosenBeer.layer.borderWidth = 1.0
-        
-        
-        
-        //print(newNames)
+        beerListTable.layer.borderWidth = 1.0; beerListTable.layer.cornerRadius = 8.0;
+        self.beerListTable.layer.borderColor = UIColor(red:75/255.0, green:75/255.0, blue:75/255.0, alpha: 1.0).CGColor
+        chosenBeer.layer.borderWidth = 1.0; chosenBeer.layer.cornerRadius = 8.0;
+        self.chosenBeer.layer.borderColor = UIColor(red:240/255.0, green:240/255.0, blue:240/255.0, alpha: 1.0).CGColor
         
         // Do any additional setup after loading the view, typically from a nib.
 
@@ -88,7 +92,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         if tableView == beerListTable {
             beerListTable.deselectRowAtIndexPath(indexPath, animated: true)
             let cell = beerListTable.cellForRowAtIndexPath(indexPath)
-            let name = cell!.textLabel!.text!.lowercaseString
+            let name = cell!.textLabel!.text!
             beer.append(name)
             self.chosenBeer.reloadData()
             
@@ -130,7 +134,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         beerQty = 0.0
         for name in beer {
             for beerItem in beerList {
-                if beerItem.name.lowercaseString.containsString(name) {
+                if beerItem.name.lowercaseString.containsString(name.lowercaseString) {
                     beerPrice = beerPrice + beerItem.price
                     beerQty = beerQty + Double(beerItem.qty)
                 }
@@ -149,12 +153,9 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         priceDisplay.text = "Price for each: $\(roundValue)"
         
         if remCans == 0 {
-            
             canLabel.text = "Beers for each: \(cansForEach) cans"
-        }
-        else {
+        } else {
             canLabel.text = "Cans for each: \(cansForEach) beers, with \(remCans) left over"
-            
         }
     }
     
