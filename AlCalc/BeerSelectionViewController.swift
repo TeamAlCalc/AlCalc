@@ -10,82 +10,103 @@ import UIKit
 
 import CoreData
 
-class BeerSelectionViewController: UIViewController {
+import Foundation
+
+import QuartzCore
+
+class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var numPeopleLabel: UILabel!
     
     var newNames : [String]! //Gets string of guests from GuestListViewController
     
-    var beer: [String] = ["Bud"]
-    
-    var beerArray : [String] = ["Millerlight","Budlight","CoorsLight"] //our beer list that will become objects
+    var beer: [String] = []
     
     var payed: [Bool]!
     
     var value:Int! //Number value of guests
     
     @IBOutlet weak var BeerRun: UIButton!
-    
-    @IBOutlet weak var textarea: UITextField!
-    
-    @IBOutlet weak var textarea2: UITextField!
-    
-    @IBOutlet weak var textarea3: UITextField!
-    
     @IBOutlet weak var priceDisplay: UILabel!
-    
     @IBOutlet weak var canLabel: UILabel!
-    
     @IBOutlet weak var showCalc: UIButton!
+    @IBOutlet weak var beerListTable: UITableView!
+    @IBOutlet weak var chosenBeer: UITableView!
     
-    @IBOutlet weak var firstView: UITableView!
-    
-    var firstValue: Double!
-    var secondValue: Double!
-    var thirdValue: Double!
+    var numOfGuests: Double!
+    var beerPrice = 0.0
+    var beerQty = 0.0
     var priceValue: Double!
     var cans: Double!
     var roundValue: Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        //austin, this is where the number of guest comes in from segue
-        numPeopleLabel.text = "\(value)"
+        beerListTable.dataSource = self
+        beerListTable.delegate = self
+        beerListTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        chosenBeer.dataSource = self
+        chosenBeer.delegate = self
+        chosenBeer.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell2")
+        numOfGuests = Double(newNames.count)
+        beerListTable.layer.borderWidth = 1.0
+        chosenBeer.layer.borderWidth = 1.0
+        
+        
+        
         //print(newNames)
         
         // Do any additional setup after loading the view, typically from a nib.
 
     }
     
-    
-    func tableView(firstView: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
-            return beerArray.count
-    }
-    //tells what string(names) will be in each row
-    
-    func tableView(firstView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell =
-        firstView.dequeueReusableCellWithIdentifier("Cell")
-        cell!.textLabel!.text = beerArray[indexPath.row]
-        
-        return cell!
+    //
+    // Table controllers
+    //
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == beerListTable {
+            return beerList.count
+        } else {
+            return beer.count
+        }
     }
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if tableView == beerListTable {
+            let cell = beerListTable.dequeueReusableCellWithIdentifier("Cell")
+            cell!.textLabel!.text = beerList[indexPath.row].name
+            return cell!
+            
+        } else {
+            let cell = chosenBeer.dequeueReusableCellWithIdentifier("Cell2")
+            cell!.textLabel!.text = beer[indexPath.row]
+            return cell!
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        if tableView == beerListTable {
+            beerListTable.deselectRowAtIndexPath(indexPath, animated: true)
+            let cell = beerListTable.cellForRowAtIndexPath(indexPath)
+            let name = cell!.textLabel!.text!.lowercaseString
+            beer.append(name)
+            self.chosenBeer.reloadData()
+            
+        } else {
+            chosenBeer.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
     
 
-    
-    
     @IBAction func BeerRunClicked(sender: AnyObject) {
         self.performSegueWithIdentifier("PassList", sender: newNames)
     }
    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if( segue.identifier == "PassList"){
+        if(segue.identifier == "PassList"){
             currentPartyFL = true
+            
             userDefaults.setObject(newNames, forKey:"currentPartyGuestList")
             userDefaults.setObject(payed, forKey: "currentPartyPayed")
             userDefaults.setObject(beer, forKey: "currentPartyBeerList")
@@ -105,25 +126,29 @@ class BeerSelectionViewController: UIViewController {
     }
     
     @IBAction func whenClicked(sender: AnyObject) {
+        beerPrice = 0.0
+        beerQty = 0.0
+        for name in beer {
+            for beerItem in beerList {
+                if beerItem.name.lowercaseString.containsString(name) {
+                    beerPrice = beerPrice + beerItem.price
+                    beerQty = beerQty + Double(beerItem.qty)
+                }
+            }
+        }
         
-        firstValue = Double(numPeopleLabel.text!)
-        
-        secondValue = Double(textarea2.text!) //Gets beer price value
-        
-        thirdValue = Double(textarea3.text!) //Gets beer quantity value
-        
-        priceValue = Double(secondValue! / firstValue!) //Total price based on number of friends
+        priceValue = Double(beerPrice / numOfGuests!) //Total price based on number of friends
 
-        cans = Double(thirdValue! / firstValue!) //Number of beer cans each guest will recieve
+        cans = Double(beerQty / numOfGuests!) //Number of beer cans each guest will recieve
         
-        roundValue = Double(round(priceValue*100)/100)
+        roundValue = Double(round(priceValue * 100)/100)
         
         let cansForEach = String(format: "%.f", cans)
-        let remCans = (thirdValue! % firstValue!) //Calculates any remaining beer cans
+        let remCans = (beerQty % numOfGuests!) //Calculates any remaining beer cans
         
         priceDisplay.text = "Price for each: $\(roundValue)"
         
-        if remCans == 0{
+        if remCans == 0 {
             
             canLabel.text = "Beers for each: \(cansForEach) cans"
         }

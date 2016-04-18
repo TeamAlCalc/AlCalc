@@ -120,7 +120,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         }
         if alert == true {
             
-            var reminder = UILocalNotification()
+            let reminder = UILocalNotification()
             
             reminder.fireDate = NSDate(timeIntervalSinceNow: 10)
             reminder.repeatInterval = NSCalendarUnit.Day
