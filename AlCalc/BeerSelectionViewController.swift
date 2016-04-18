@@ -18,6 +18,8 @@ class BeerSelectionViewController: UIViewController {
     
     var beer: [String] = ["Bud"]
     
+    var beerArray : [String] = ["Millerlight","Budlight","CoorsLight"] //our beer list that will become objects
+    
     var payed: [Bool]!
     
     var value:Int! //Number value of guests
@@ -36,6 +38,8 @@ class BeerSelectionViewController: UIViewController {
     
     @IBOutlet weak var showCalc: UIButton!
     
+    @IBOutlet weak var firstView: UITableView!
+    
     var firstValue: Double!
     var secondValue: Double!
     var thirdValue: Double!
@@ -45,6 +49,7 @@ class BeerSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         //austin, this is where the number of guest comes in from segue
         numPeopleLabel.text = "\(value)"
         //print(newNames)
@@ -52,6 +57,25 @@ class BeerSelectionViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
 
     }
+    
+    
+    func tableView(firstView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return beerArray.count
+    }
+    //tells what string(names) will be in each row
+    
+    func tableView(firstView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell =
+        firstView.dequeueReusableCellWithIdentifier("Cell")
+        cell!.textLabel!.text = beerArray[indexPath.row]
+        
+        return cell!
+    }
+    
+    
+
     
     
     @IBAction func BeerRunClicked(sender: AnyObject) {
