@@ -12,6 +12,8 @@ import CoreData
 class HomepageViewController: UIViewController {
     
     var toPass: String!
+    
+    @IBAction func exitToHomePageViewController(segue: UIStoryboardSegue){}
 
     @IBOutlet weak var newPartyButton: UIButton!
     
