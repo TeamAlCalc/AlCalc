@@ -20,6 +20,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
     let dateFormatter = NSDateFormatter()
     
     
+    
     @IBOutlet weak var partyOver: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var canLabel: UILabel!
@@ -37,6 +38,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateFormatter.dateStyle = .MediumStyle
         tview.delegate = self
         tview.dataSource = self
         tview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -48,6 +50,8 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         
         priceLabel.text = (userDefaults.objectForKey("currentPriceLabel") as! String)
         canLabel.text = (userDefaults.objectForKey("currentCanLabel") as! String)
+        print("payed:")
+        print(payed)
         
     }
     
@@ -97,9 +101,9 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         let entity = NSEntityDescription.insertNewObjectForEntityForName("Party", inManagedObjectContext: moc) as! Party
         
         // add our data
-        entity.setValue(finalNames!, forKey: "guestList")
-        entity.setValue(payed!, forKey: "payed")
-        entity.setValue(purchasedBeer!, forKey: "purchasedBeer")
+        entity.setValue(finalNames, forKey: "guestList")
+        entity.setValue(payed, forKey: "payed")
+        entity.setValue(purchasedBeer, forKey: "purchasedBeer")
         entity.setValue(dateFormatter.stringFromDate(date), forKey: "date")
         entity.setValue(priceLabel.text, forKey: "price")
         entity.setValue(canLabel.text, forKey: "cans")
@@ -112,6 +116,12 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
             userDefaults.setObject(false, forKey: "currentPartyFL")
             userDefaults.synchronize()
         } catch {
+            print("FAILURE")
+            print("FAILURE")
+            print("FAILURE")
+            print("FAILURE")
+            print("FAILURE")
+            print("FAILURE")
             fatalError("Failure to save context: \(error)")
         }
         var alert = false
