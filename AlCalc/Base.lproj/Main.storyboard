@@ -79,7 +79,7 @@
                                     <barButtonItem title="Homepage" id="8zC-q2-mIe"/>
                                     <barButtonItem title="Current" width="74.5" id="a5w-zS-fS9">
                                         <connections>
-                                            <action selector="dockCurrentPartySegue:" destination="Gft-ba-Ubb" id="eqR-Lb-cdl"/>
+                                            <action selector="dockCurrentPartyAction:" destination="Gft-ba-Ubb" id="SaS-Yz-wUl"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Notifications" id="RvB-8i-II3"/>
@@ -96,6 +96,10 @@
                                 <rect key="frame" x="139" y="485" width="97" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Old Party"/>
+                                <connections>
+                                    <action selector="oldPartySegue:" destination="Gft-ba-Ubb" eventType="touchUpInside" id="PqK-Qv-O4m"/>
+                                    <segue destination="POT-d1-Ebg" kind="show" identifier="OldPartySegue" id="YdP-Ke-baA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKG-ks-KIZ">
                                 <rect key="frame" x="140" y="422" width="95" height="34"/>
@@ -114,8 +118,9 @@
                         <outlet property="dockCurrentPartyButton" destination="a5w-zS-fS9" id="LUv-aq-vrm"/>
                         <outlet property="homepageHeaderLabel" destination="zBu-AE-kXZ" id="n5U-aM-Ven"/>
                         <outlet property="newPartyButton" destination="AKG-ks-KIZ" id="bak-QW-B2i"/>
+                        <outlet property="oldPartyButton" destination="o6y-0G-KB9" id="kEt-2B-5NK"/>
                         <segue destination="6c1-8t-zTT" kind="show" identifier="NewParty" id="c4C-vP-pXJ"/>
-                        <segue destination="lvk-LR-vyX" kind="show" identifier="DockHomepageToaCurrent" id="AMp-XE-2eM"/>
+                        <segue destination="lvk-LR-vyX" kind="show" identifier="DockHomepageToCurrent" id="AMp-XE-2eM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilx-O0-fo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -413,7 +418,7 @@
         <!--OldPartyViewController-->
         <scene sceneID="Wec-k4-buM">
             <objects>
-                <viewController id="POT-d1-Ebg" userLabel="OldPartyViewController" sceneMemberID="viewController">
+                <viewController id="POT-d1-Ebg" userLabel="OldPartyViewController" customClass="OldPartyViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b66-qJ-EMk"/>
                         <viewControllerLayoutGuide type="bottom" id="C9e-bc-Ugc"/>
@@ -438,6 +443,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="U7R-5h-c4v"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="oldPartyTable" destination="yw6-Mc-1Sf" id="2l1-Mz-krc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIJ-Wi-DBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -446,6 +454,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="RbV-Xp-I34"/>
-        <segue reference="y3W-WU-6K2"/>
+        <segue reference="AMp-XE-2eM"/>
     </inferredMetricsTieBreakers>
 </document>
