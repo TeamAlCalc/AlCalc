@@ -17,6 +17,8 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
     var payed: [Bool]!
     var date: NSDate!
     let green = UIColor(red: 0, green: 255, blue: 0, alpha: 0.25)
+    let dateFormatter = NSDateFormatter()
+    
     
     @IBOutlet weak var partyOver: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
@@ -98,10 +100,10 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         entity.setValue(finalNames!, forKey: "guestList")
         entity.setValue(payed!, forKey: "payed")
         entity.setValue(purchasedBeer!, forKey: "purchasedBeer")
-        entity.setValue(date, forKey: "date")
+        entity.setValue(dateFormatter.stringFromDate(date), forKey: "date")
         entity.setValue(priceLabel.text, forKey: "price")
         entity.setValue(canLabel.text, forKey: "cans")
-        
+
         
         // we save our entity
         do {

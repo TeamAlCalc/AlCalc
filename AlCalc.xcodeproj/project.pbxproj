@@ -12,6 +12,7 @@
 		AA20C2801CAA1E0900E9E0E7 /* BeerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */; };
 		AA5811C81CAC84C50060E27C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C71CAC84C50060E27C /* User.swift */; };
 		AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */; };
+		AA798F071CC6C29D004440C1 /* OldPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA798F061CC6C29D004440C1 /* OldPartyViewController.swift */; };
 		AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C8EF91CACA1D200265D0D /* Alcohol.swift */; };
 		AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */; };
 		AABB8FC71CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB8FC51CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld */; };
@@ -50,6 +51,7 @@
 		AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerSelectionViewController.swift; sourceTree = "<group>"; };
 		AA5811C71CAC84C50060E27C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeViewController.swift; sourceTree = "<group>"; };
+		AA798F061CC6C29D004440C1 /* OldPartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldPartyViewController.swift; sourceTree = "<group>"; };
 		AA8C8EF91CACA1D200265D0D /* Alcohol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alcohol.swift; sourceTree = "<group>"; };
 		AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		AABB8FC61CBF05FD0099EDDD /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */,
 				AABB8FC51CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld */,
 				AABB8FC81CBF074F0099EDDD /* DataController.swift */,
+				AA798F061CC6C29D004440C1 /* OldPartyViewController.swift */,
 			);
 			path = AlCalc;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				A9122D851CADBDEC00A98FC4 /* GuestListViewController.swift in Sources */,
 				AAF91B301CAC95520061D990 /* AgeValidViewController.swift in Sources */,
 				AABB8FCC1CBF07AA0099EDDD /* Party+CoreDataProperties.swift in Sources */,
+				AA798F071CC6C29D004440C1 /* OldPartyViewController.swift in Sources */,
 				AA5811C81CAC84C50060E27C /* User.swift in Sources */,
 				AABB8FCD1CBF07AA0099EDDD /* Party.swift in Sources */,
 				AAEB21FD1C9A348C00035524 /* AppDelegate.swift in Sources */,

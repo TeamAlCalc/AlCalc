@@ -56,9 +56,9 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         chosenBeer.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell2")
         numOfGuests = Double(newNames.count)
         beerListTable.layer.borderWidth = 1.0; beerListTable.layer.cornerRadius = 8.0;
-        self.beerListTable.layer.borderColor = UIColor(red:75/255.0, green:75/255.0, blue:75/255.0, alpha: 1.0).CGColor
+        self.beerListTable.layer.borderColor = UIColor(red:100/255.0, green:100/255.0, blue:100/255.0, alpha: 1.0).CGColor
         chosenBeer.layer.borderWidth = 1.0; chosenBeer.layer.cornerRadius = 8.0;
-        self.chosenBeer.layer.borderColor = UIColor(red:240/255.0, green:240/255.0, blue:240/255.0, alpha: 1.0).CGColor
+        self.chosenBeer.layer.borderColor = UIColor(red:100/255.0, green:100/255.0, blue:100/255.0, alpha: 1.0).CGColor
         
         // Do any additional setup after loading the view, typically from a nib.
 
