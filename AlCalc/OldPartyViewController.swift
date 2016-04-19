@@ -17,37 +17,39 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
     
     var parties: [Party]!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
+        parties = loadParties()
         oldPartyTable.delegate = self
         oldPartyTable.dataSource = self
         oldPartyTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        loadParties()
-        print("The date is: ")
-        print(dateFormatter.stringFromDate(NSDate()))
+        print(parties[0].date)
+        print(parties[0].payed)
+        print(parties.count)
         
     }
     //
     // Table controllers
     //
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(oldPartyTable: UITableView, numberOfRowsInSection section: Int) -> Int {
         return parties.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(oldPartyTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
-        print()
-        print("!!!")
-        cell!.textLabel!.text = parties[indexPath.row].date!
-        for guestPayed in parties[indexPath.row].payed! {
+        let cell = oldPartyTable.dequeueReusableCellWithIdentifier("Cell")
+        cell!.textLabel!.text = parties[indexPath.row].date
+        print("???")
+        print(parties[indexPath.row].payed)
+        print("@@@")
+        for guestPayed in parties[indexPath.row].payed {
+            print("~~~")
             if guestPayed == false {
                 cell!.backgroundColor = red
             }
         }
-        
-        tableView.reloadData()
+
         return cell!
 
     }
@@ -64,14 +66,14 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
     }
   
     
-    func loadParties(){
+    func loadParties() -> [Party] {
         
         
         let moc = DataController().managedObjectContext
         let partyFetch = NSFetchRequest(entityName: "Party")
         
         do {
-            parties = try moc.executeFetchRequest(partyFetch) as! [Party]
+            return try moc.executeFetchRequest(partyFetch) as! [Party]
             
         } catch {
             fatalError("Failure to save context: \(error)")
