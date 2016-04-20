@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A9122D851CADBDEC00A98FC4 /* GuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */; };
 		A92A9AF71CBC6BE1005F946D /* FinalGuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */; };
+		A9C3045D1CC70D2F00D27D95 /* OPGuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */; };
 		AA20C2801CAA1E0900E9E0E7 /* BeerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */; };
 		AA5811C81CAC84C50060E27C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C71CAC84C50060E27C /* User.swift */; };
 		AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestListViewController.swift; sourceTree = "<group>"; };
 		A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalGuestListViewController.swift; sourceTree = "<group>"; };
+		A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPGuestListViewController.swift; sourceTree = "<group>"; };
 		AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerSelectionViewController.swift; sourceTree = "<group>"; };
 		AA5811C71CAC84C50060E27C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				AABB8FC51CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld */,
 				AABB8FC81CBF074F0099EDDD /* DataController.swift */,
 				AA798F061CC6C29D004440C1 /* OldPartyViewController.swift */,
+				A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */,
 			);
 			path = AlCalc;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */,
 				AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */,
 				AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */,
+				A9C3045D1CC70D2F00D27D95 /* OPGuestListViewController.swift in Sources */,
 				AABB8FC71CBF05FD0099EDDD /* CoreDataModel.xcdatamodeld in Sources */,
 				AABB8FC91CBF074F0099EDDD /* DataController.swift in Sources */,
 				A9122D851CADBDEC00A98FC4 /* GuestListViewController.swift in Sources */,
