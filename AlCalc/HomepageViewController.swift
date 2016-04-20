@@ -13,7 +13,10 @@ class HomepageViewController: UIViewController {
     
     var toPass: String!
     
-    @IBAction func exitToHomePageViewController(segue: UIStoryboardSegue){}
+    @IBAction func backToHome(segue: UIStoryboardSegue){}
+    @IBAction func cancelToHome(segue: UIStoryboardSegue){}
+
+
 
     @IBOutlet weak var newPartyButton: UIButton!
     
