@@ -54,7 +54,7 @@
                         <outlet property="headerLabel" destination="Jy8-CP-c0A" id="kgS-9r-CGO"/>
                         <outlet property="ofAgeButton" destination="2Vw-4D-kd7" id="HTw-ig-hN7"/>
                         <outlet property="tosButton" destination="7XG-jY-Xi1" id="aB4-Tx-yEw"/>
-                        <segue destination="Gft-ba-Ubb" kind="show" identifier="Homepage" id="L4q-Yq-kvr"/>
+                        <segue destination="Gft-ba-Ubb" kind="showDetail" identifier="Homepage" action="showViewController:sender:" id="L4q-Yq-kvr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -98,7 +98,7 @@
                                 <state key="normal" title="Old Party"/>
                                 <connections>
                                     <action selector="oldPartySegue:" destination="Gft-ba-Ubb" eventType="touchUpInside" id="PqK-Qv-O4m"/>
-                                    <segue destination="POT-d1-Ebg" kind="show" identifier="OldPartySegue" id="YdP-Ke-baA"/>
+                                    <segue destination="POT-d1-Ebg" kind="showDetail" identifier="OldPartySegue" action="showViewController:sender:" id="YdP-Ke-baA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKG-ks-KIZ">
@@ -120,7 +120,7 @@
                         <outlet property="newPartyButton" destination="AKG-ks-KIZ" id="bak-QW-B2i"/>
                         <outlet property="oldPartyButton" destination="o6y-0G-KB9" id="kEt-2B-5NK"/>
                         <segue destination="6c1-8t-zTT" kind="show" identifier="NewParty" id="c4C-vP-pXJ"/>
-                        <segue destination="lvk-LR-vyX" kind="show" identifier="DockHomepageToCurrent" id="AMp-XE-2eM"/>
+                        <segue destination="lvk-LR-vyX" kind="showDetail" identifier="DockHomepageToCurrent" animates="NO" action="showViewController:sender:" id="AMp-XE-2eM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilx-O0-fo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,8 +142,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="Gft-ba-Ubb" kind="show" identifier="AgeValid" id="b1E-pz-AiX"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="AgeInvalid" id="Y61-ae-k3w"/>
+                        <segue destination="Gft-ba-Ubb" kind="showDetail" identifier="AgeValid" action="showViewController:sender:" id="b1E-pz-AiX"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="AgeInvalid" action="showViewController:sender:" id="Y61-ae-k3w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eH-Gz-yxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,7 +273,7 @@
                                 <state key="normal" title="Beer Run"/>
                                 <connections>
                                     <action selector="BeerRunClicked:" destination="Z8m-lg-SL2" eventType="touchUpInside" id="Hzl-Zw-YyL"/>
-                                    <segue destination="lvk-LR-vyX" kind="show" identifier="PassList" id="y3W-WU-6K2"/>
+                                    <segue destination="lvk-LR-vyX" kind="showDetail" identifier="PassList" action="showViewController:sender:" id="y3W-WU-6K2"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YX8-Pq-Gth">
@@ -360,7 +360,7 @@
                                     <barButtonItem title="Homepage" id="7WY-SP-LbI">
                                         <connections>
                                             <action selector="dockHomepageSegue:" destination="lvk-LR-vyX" id="cd0-h4-pdA"/>
-                                            <segue destination="Gft-ba-Ubb" kind="show" identifier="DockCurrentToHomepage" id="RbV-Xp-I34"/>
+                                            <segue destination="Gft-ba-Ubb" kind="showDetail" identifier="DockCurrentToHomepage" animates="NO" action="showViewController:sender:" id="RbV-Xp-I34"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Current" width="74.5" id="ycK-3A-4dQ"/>
@@ -500,6 +500,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" id="T7H-Fu-Liv">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="k69-Ji-Dw6">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                            </button>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="ABV" destination="KMq-2x-qjP" id="Jek-Ox-qlM"/>

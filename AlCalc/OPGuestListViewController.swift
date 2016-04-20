@@ -101,7 +101,7 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
                 }
             }
         } catch {
-            print("FAILURE")
+            fatalError("Failure to save context: \(error)")
         }
     }
     

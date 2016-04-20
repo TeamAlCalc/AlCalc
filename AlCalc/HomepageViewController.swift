@@ -41,6 +41,10 @@ class HomepageViewController: UIViewController {
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
+    
     @IBAction func oldPartySegue(sender: AnyObject) {
         if loadParties().count > 0 {
             performSegueWithIdentifier("OldPartySegue", sender: nil)

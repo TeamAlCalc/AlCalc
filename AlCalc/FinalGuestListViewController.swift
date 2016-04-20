@@ -115,12 +115,6 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
             userDefaults.setObject(false, forKey: "currentPartyFL")
             userDefaults.synchronize()
         } catch {
-            print("FAILURE")
-            print("FAILURE")
-            print("FAILURE")
-            print("FAILURE")
-            print("FAILURE")
-            print("FAILURE")
             fatalError("Failure to save context: \(error)")
         }
         var alert = false
