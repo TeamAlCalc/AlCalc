@@ -49,13 +49,19 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        numOfGuests = Double(newNames.count)
+        let temp = userDefaults.objectForKey("currentPartyBeerList") as? [String]
+        if temp! != [] {
+            beer = temp!
+            whenClicked(nil)
+        }
         beerListTable.dataSource = self
         beerListTable.delegate = self
         beerListTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         chosenBeer.dataSource = self
         chosenBeer.delegate = self
         chosenBeer.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell2")
-        numOfGuests = Double(newNames.count)
+        
         beerListTable.layer.borderWidth = 1.0; beerListTable.layer.cornerRadius = 8.0;
         self.beerListTable.layer.borderColor = UIColor(red:100/255.0, green:100/255.0, blue:100/255.0, alpha: 1.0).CGColor
         chosenBeer.layer.borderWidth = 1.0; chosenBeer.layer.cornerRadius = 8.0;
@@ -95,6 +101,9 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
             let cell = beerListTable.cellForRowAtIndexPath(indexPath)
             let name = cell!.textLabel!.text!
             beer.append(name)
+            
+            userDefaults.setObject(beer, forKey: "currentPartyBeerList")
+            userDefaults.synchronize()
             self.chosenBeer.reloadData()
             
         } else {
@@ -130,7 +139,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func whenClicked(sender: AnyObject) {
+    @IBAction func whenClicked(sender: AnyObject?) {
         beerPrice = 0.0
         beerQty = 0.0
         for name in beer {

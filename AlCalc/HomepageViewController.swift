@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import SystemConfiguration
+
+
 
 class HomepageViewController: UIViewController {
     
@@ -22,7 +25,13 @@ class HomepageViewController: UIViewController {
     
     @IBOutlet weak var oldPartyButton: UIButton!
     
+    @IBOutlet weak var dockNotifyButton: UIBarButtonItem!
+    
     @IBOutlet weak var homepageHeaderLabel: UILabel!
+    
+    @IBAction func notifyButtonSegue(sender: AnyObject) {
+        performSegueWithIdentifier("NotificationSegue", sender: nil)
+    }
     
     @IBOutlet weak var dockCurrentPartyButton: UIBarButtonItem!
     
@@ -45,7 +54,18 @@ class HomepageViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if segue.identifier == "NotificationSegue" {
+            var currentInstallation = PFInstallation.currentInstallation()
+            if currentInstallation.badge != 0 {
+                currentInstallation.badge = 0
+                currentInstallation.save
+            }
+            let destination = (segue.destinationViewController as! OldPartyViewController)
+            destination.notif = true
+        } else if segue.identifier == "OldPartySegue" {
+            let destination = (segue.destinationViewController as! OldPartyViewController)
+            destination.notif = false
+        }
     }
     
     @IBAction func oldPartySegue(sender: AnyObject) {
@@ -67,6 +87,7 @@ class HomepageViewController: UIViewController {
     
     @IBAction func newParty(sender: AnyObject) {
         if currentPartyFL == false {
+            userDefaults.setObject([], forKey: "currentPartyBeerList")
             performSegueWithIdentifier("NewParty", sender: nil)
         } else {
             let alert = UIAlertController(title: "Error", message: "There is already a party going! Don't want party too hard...", preferredStyle: UIAlertControllerStyle.Alert)
