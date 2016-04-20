@@ -12,6 +12,9 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var oldPartyTable: UITableView!
     
+    @IBAction func backToOldParty(segue: UIStoryboardSegue){}
+
+    
     let red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.25)
     
     var index: Int!
@@ -67,8 +70,12 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = (segue.destinationViewController as! OPGuestListViewController)
-        destination.index = index
+        
+        if(segue.identifier=="OldPartyGuestListSegue"){
+            let destination = (segue.destinationViewController as! OPGuestListViewController)
+            destination.index = index
+        }
+       
     }
   
     
