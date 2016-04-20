@@ -22,6 +22,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
     
     
     @IBOutlet weak var partyOver: UIButton!
+    
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var canLabel: UILabel!
     @IBOutlet weak var tview: UITableView!
@@ -47,11 +48,8 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         payed = userDefaults.objectForKey("currentPartyPayed") as! [Bool]
         purchasedBeer = userDefaults.objectForKey("currentPartyBeerList") as! [String]
         date = userDefaults.objectForKey("currentPartyDate") as! NSDate
-        
-        priceLabel.text = (userDefaults.objectForKey("currentPriceLabel") as! String)
+        priceLabel.text = userDefaults.objectForKey("currentPriceLabel") as? String
         canLabel.text = (userDefaults.objectForKey("currentCanLabel") as! String)
-        print("payed:")
-        print(payed)
         
     }
     
@@ -99,6 +97,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         
         // we set up our entity by selecting the entity and context that we're targeting
         let entity = NSEntityDescription.insertNewObjectForEntityForName("Party", inManagedObjectContext: moc) as! Party
+
         
         // add our data
         entity.setValue(finalNames, forKey: "guestList")
@@ -141,14 +140,14 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
             reminder.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
             
             UIApplication.sharedApplication().scheduleLocalNotification(reminder)
-            
-            print("alert set~~~~~~")
-            
+       
         }
 
         performSegueWithIdentifier("DockCurrentToHomepage", sender: nil)
         
     }
+    
+
     
     
     

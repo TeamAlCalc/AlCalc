@@ -42,6 +42,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     var cans: Double!
     var roundValue: Double!
     
+    let priceFormat = ".2"
     let borderColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1.0)
     
     
@@ -145,21 +146,28 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
 
         cans = Double(beerQty / numOfGuests!) //Number of beer cans each guest will recieve
         
+        
         roundValue = Double(round(priceValue * 100)/100)
+        
         
         let cansForEach = String(format: "%.f", cans)
         let remCans = (beerQty % numOfGuests!) //Calculates any remaining beer cans
         
-        priceDisplay.text = "Price for each: $\(roundValue)"
+        priceDisplay.text = "Price for each: $\(roundValue.format(priceFormat))"
         
         if remCans == 0 {
             canLabel.text = "Beers for each: \(cansForEach) cans"
         } else {
-            canLabel.text = "Cans for each: \(cansForEach) beers, with \(remCans) left over"
+            canLabel.text = "Beers for each: \(cansForEach) cans, with \(remCans) left over"
         }
+        
     }
     
-
-    
 }
+extension Double {
+    func format(f: String) -> String {
+        return String(format: "%\(f)f", self)
+    }
+}
+
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fcU-eE-zZo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fcU-eE-zZo">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -407,7 +407,7 @@
                         <outlet property="canLabel" destination="IrD-Mb-9Xv" id="Npl-qS-y8x"/>
                         <outlet property="dockHomepageButton" destination="0xS-Ym-QUX" id="hdu-px-76F"/>
                         <outlet property="partyOver" destination="dTv-dN-Bv4" id="xut-vO-Trq"/>
-                        <outlet property="priceLabel" destination="IrD-Mb-9Xv" id="n0V-xR-fjR"/>
+                        <outlet property="priceLabel" destination="Ti3-rm-gak" id="YPa-HE-kqw"/>
                         <outlet property="tview" destination="gf3-ES-aOg" id="bhe-sf-x0L"/>
                     </connections>
                 </viewController>
@@ -444,16 +444,17 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="oldPartyTable" destination="yw6-Mc-1Sf" id="2l1-Mz-krc"/>
+                        <segue destination="TTU-03-j8r" kind="show" identifier="OldPartyGuestListSegue" id="1Dv-YN-iOc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIJ-Wi-DBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="154.5" y="1264.5"/>
         </scene>
-        <!--Guest List View Controller-->
+        <!--Old Party Guest List-->
         <scene sceneID="yDM-UW-4Mh">
             <objects>
-                <viewController id="TTU-03-j8r" customClass="OPGuestListViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Old Party Guest List" id="TTU-03-j8r" customClass="OPGuestListViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H8L-rX-irZ"/>
                         <viewControllerLayoutGuide type="bottom" id="Bkn-GR-go7"/>
@@ -504,7 +505,6 @@
                         <outlet property="ABV" destination="KMq-2x-qjP" id="Jek-Ox-qlM"/>
                         <outlet property="OPGuestList" destination="mhz-1U-lof" id="Q2F-3m-uYr"/>
                         <outlet property="can" destination="5L6-PE-FD5" id="glz-E5-aiW"/>
-                        <outlet property="list" destination="mhz-1U-lof" id="ybv-zE-fJF"/>
                         <outlet property="navBar" destination="G3h-cR-a7C" id="fab-Tg-z2y"/>
                         <outlet property="percentage" destination="s4j-pt-UXZ" id="NqG-Z1-uC4"/>
                         <outlet property="price" destination="f0q-aY-i0Z" id="fQ0-aq-aZz"/>

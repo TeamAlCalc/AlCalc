@@ -14,6 +14,7 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
     
     let red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.25)
     
+    var index: Int!
     
     var parties: [Party]!
     
@@ -24,9 +25,6 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
         oldPartyTable.delegate = self
         oldPartyTable.dataSource = self
         oldPartyTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        print(parties[0].date)
-        print(parties[0].payed)
-        print(parties.count)
         
     }
     //
@@ -52,14 +50,26 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-
+        parties = loadParties()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        let name = cell!.textLabel!.text!
-        if name == cell!.textLabel!.text! {
-            cell!
-        }
+        
+        index = indexPath.row
 
+        userDefaults.setObject(parties[indexPath.row].guestList, forKey:"oldPartyGuestList")
+        userDefaults.setObject(parties[indexPath.row].payed, forKey: "oldPartyPayed")
+
+        userDefaults.setObject(parties[indexPath.row].cans, forKey: "oldCanLabel")
+        userDefaults.setObject(parties[indexPath.row].price, forKey: "oldPriceLabel")
+        
+        userDefaults.synchronize()
+        
+        performSegueWithIdentifier("OldPartyGuestListSegue", sender: nil)
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destination = (segue.destinationViewController as! OPGuestListViewController)
+        destination.index = index
     }
   
     
