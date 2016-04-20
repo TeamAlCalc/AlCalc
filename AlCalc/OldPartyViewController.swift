@@ -37,14 +37,11 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(oldPartyTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        parties = loadParties()
         let cell = oldPartyTable.dequeueReusableCellWithIdentifier("Cell")
         cell!.textLabel!.text = parties[indexPath.row].date
-        print("???")
         print(parties[indexPath.row].payed)
-        print("@@@")
         for guestPayed in parties[indexPath.row].payed {
-            print("~~~")
             if guestPayed == false {
                 cell!.backgroundColor = red
             }
