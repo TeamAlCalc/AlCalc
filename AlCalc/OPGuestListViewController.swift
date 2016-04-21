@@ -66,7 +66,7 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
         tview.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tview.cellForRowAtIndexPath(indexPath)
         
-        if cell!.backgroundColor != green{
+        if cell!.backgroundColor != green {
             cell!.backgroundColor = green
             payed[indexPath.row] = true
         } else {
@@ -89,7 +89,6 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
         do {
             if let fetchResults = try moc.executeFetchRequest(request) as? [NSManagedObject] {
                 if fetchResults.count != 0{
-                    
                     let managedObject = fetchResults[index]
                     managedObject.setValue(payed, forKey: "payed")
                     
