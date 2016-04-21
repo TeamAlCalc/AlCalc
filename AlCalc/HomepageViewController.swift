@@ -49,17 +49,18 @@ class HomepageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.darkGrayColor()
         // Do any additional setup after loading the view, typically from a nib.
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "NotificationSegue" {
-            var currentInstallation = PFInstallation.currentInstallation()
-            if currentInstallation.badge != 0 {
-                currentInstallation.badge = 0
-                currentInstallation.save
-            }
+           // var currentInstallation = PFInstallation.currentInstallation()
+            //if currentInstallation.badge != 0 {
+              ///  currentInstallation.badge = 0
+               // currentInstallation.save
+            //}
             let destination = (segue.destinationViewController as! OldPartyViewController)
             destination.notif = true
         } else if segue.identifier == "OldPartySegue" {
