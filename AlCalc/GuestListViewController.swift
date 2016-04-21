@@ -64,7 +64,13 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     // allows and action to be done, after cicking
     
     @IBAction func selectBeer(sender: AnyObject) {
-        self.performSegueWithIdentifier("passInt", sender: names.count)
+        if names.count > 0 {
+            self.performSegueWithIdentifier("passInt", sender: names.count)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Can't have a party without people!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     // performs segue between GuestListViewController -> BeerSelectionViewController (so count of people, appears on label, in

@@ -20,6 +20,7 @@ extension Party {
     @NSManaged var date: String
     @NSManaged var price: String
     @NSManaged var cans: String
+    @NSManaged var notifID: String
 
 }
 

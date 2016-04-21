@@ -18,6 +18,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
     var date: NSDate!
     let green = UIColor(red: 0, green: 255, blue: 0, alpha: 0.25)
     let dateFormatter = NSDateFormatter()
+    let notifID = String(random())
     
     
     
@@ -106,6 +107,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         entity.setValue(dateFormatter.stringFromDate(date), forKey: "date")
         entity.setValue(priceLabel.text, forKey: "price")
         entity.setValue(canLabel.text, forKey: "cans")
+        entity.setValue(notifID, forKey: "notifID")
 
         
         // we save our entity
@@ -132,6 +134,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
             reminder.alertBody = "Somebody hasn't payed bruh..."
             reminder.timeZone = NSTimeZone.defaultTimeZone()
             reminder.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+            reminder.category = notifID
             
             UIApplication.sharedApplication().scheduleLocalNotification(reminder)
        

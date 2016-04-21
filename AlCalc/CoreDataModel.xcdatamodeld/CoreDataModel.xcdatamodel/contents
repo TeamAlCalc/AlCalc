@@ -4,11 +4,12 @@
         <attribute name="cans" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="guestList" optional="YES" attributeType="Transformable" indexed="YES" syncable="YES"/>
+        <attribute name="notifID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="payed" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="purchasedBeer" optional="YES" attributeType="Transformable" indexed="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Party" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Party" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

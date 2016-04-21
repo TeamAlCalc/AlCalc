@@ -55,11 +55,7 @@ class HomepageViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "NotificationSegue" {
-           // var currentInstallation = PFInstallation.currentInstallation()
-            //if currentInstallation.badge != 0 {
-              ///  currentInstallation.badge = 0
-               // currentInstallation.save
-            //}
+           UIApplication.sharedApplication().applicationIconBadgeNumber = 0
             let destination = (segue.destinationViewController as! OldPartyViewController)
             destination.notif = true
         } else if segue.identifier == "OldPartySegue" {

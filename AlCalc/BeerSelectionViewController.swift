@@ -113,7 +113,14 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     
 
     @IBAction func BeerRunClicked(sender: AnyObject) {
-        self.performSegueWithIdentifier("PassList", sender: newNames)
+        if beer.count > 0 {
+            self.performSegueWithIdentifier("PassList", sender: newNames)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "No beer, no party.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
     }
    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

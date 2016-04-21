@@ -101,6 +101,7 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
 
         userDefaults.setObject(parties[indexPath.row].cans, forKey: "oldCanLabel")
         userDefaults.setObject(parties[indexPath.row].price, forKey: "oldPriceLabel")
+        userDefaults.setObject(parties[indexPath.row].notifID, forKey: "oldPartyNotifID")
         
         userDefaults.synchronize()
         

@@ -13,21 +13,16 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
     var finalNames : [String]!
     var purchasedBeer: [String]!
     var payed: [Bool]!
-    
+    var notifID: String!
     var index: Int!
     
     let green = UIColor(red: 0, green: 255, blue: 0, alpha: 0.25)
     
     @IBOutlet weak var OPGuestList: UITableView!
-    
     @IBOutlet weak var navBar: UINavigationBar!
-
     @IBOutlet weak var price: UILabel!
-
     @IBOutlet weak var can: UILabel!
-
     @IBOutlet weak var ABV: UILabel!
-
     @IBOutlet weak var percentage: UILabel!
     
     override func viewDidLoad() {
@@ -39,11 +34,10 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
         
         finalNames = userDefaults.objectForKey("oldPartyGuestList") as! [String]
         payed = userDefaults.objectForKey("oldPartyPayed") as! [Bool]
+        notifID = userDefaults.objectForKey("oldPartyNotifID") as! String
         
         price.text = (userDefaults.objectForKey("oldPriceLabel") as! String)
         can.text = (userDefaults.objectForKey("oldCanLabel") as! String)
-        
-
         
     }
     
@@ -97,11 +91,27 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
                     } catch {
                         fatalError("Failure to save context: \(error)")
                     }
+                    var allPayed = true
+                    for flag in payed {
+                        if flag == false {
+                            allPayed = false
+                        }
+                    }
+                    if allPayed {
+                        let list = UIApplication.sharedApplication().scheduledLocalNotifications! as [UILocalNotification]
+                        if list.count > 0 {
+                            for notification in list {
+                                if (notification.category == notifID) {
+                                    UIApplication.sharedApplication().cancelLocalNotification(notification)
+                                    break
+                                }
+                            }
+                        }
+                    }
                 }
             }
         } catch {
             fatalError("Failure to save context: \(error)")
         }
-    }
-    
+    }    
 }

@@ -182,7 +182,6 @@
                                 <state key="normal" title="Select Beer"/>
                                 <connections>
                                     <action selector="selectBeer:" destination="6c1-8t-zTT" eventType="touchUpInside" id="K1P-md-kTE"/>
-                                    <segue destination="Z8m-lg-SL2" kind="show" identifier="passInt" id="HJR-ul-jVk"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="REq-xx-9ql">
@@ -220,6 +219,7 @@
                         <outlet property="addButton" destination="L3u-Zj-uPJ" id="dEu-w8-XY9"/>
                         <outlet property="selectButton" destination="cKr-Jv-cv8" id="p6Y-P6-43S"/>
                         <outlet property="tableView" destination="REq-xx-9ql" id="OjP-0t-YQW"/>
+                        <segue destination="Z8m-lg-SL2" kind="show" identifier="passInt" id="Zhp-7U-8ya"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHu-Re-TZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
