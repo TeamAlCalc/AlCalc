@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		164007A61CC982C800FB59B4 /* LogoHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 164007A51CC982C800FB59B4 /* LogoHome.png */; };
 		A9122D851CADBDEC00A98FC4 /* GuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */; };
 		A92A9AF71CBC6BE1005F946D /* FinalGuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */; };
 		A9C3045D1CC70D2F00D27D95 /* OPGuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		164007A51CC982C800FB59B4 /* LogoHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LogoHome.png; path = ../../LogoHome.png; sourceTree = "<group>"; };
 		A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestListViewController.swift; sourceTree = "<group>"; };
 		A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalGuestListViewController.swift; sourceTree = "<group>"; };
 		A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPGuestListViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		AAEB21FB1C9A348C00035524 /* AlCalc */ = {
 			isa = PBXGroup;
 			children = (
+				164007A51CC982C800FB59B4 /* LogoHome.png */,
 				AAF91B2F1CAC95520061D990 /* AgeValidViewController.swift */,
 				AAEB21FC1C9A348C00035524 /* AppDelegate.swift */,
 				AA5811C71CAC84C50060E27C /* User.swift */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAEB22071C9A348C00035524 /* LaunchScreen.storyboard in Resources */,
+				164007A61CC982C800FB59B4 /* LogoHome.png in Resources */,
 				AAEB22041C9A348C00035524 /* Assets.xcassets in Resources */,
 				AAEB22021C9A348C00035524 /* Main.storyboard in Resources */,
 			);

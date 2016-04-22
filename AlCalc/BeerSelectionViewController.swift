@@ -67,6 +67,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         chosenBeer.layer.borderWidth = 1.0; chosenBeer.layer.cornerRadius = 8.0;
         self.chosenBeer.layer.borderColor = UIColor(red:100/255.0, green:100/255.0, blue:100/255.0, alpha: 1.0).CGColor
         
+        
         // Do any additional setup after loading the view, typically from a nib.
 
     }
@@ -169,12 +170,12 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         let cansForEach = String(format: "%.f", cans)
         let remCans = (beerQty % numOfGuests!) //Calculates any remaining beer cans
         
-        priceDisplay.text = "Price for each: $\(roundValue.format(priceFormat))"
+        priceDisplay.text = "$\(roundValue.format(priceFormat))"
         
         if remCans == 0 {
-            canLabel.text = "Beers for each: \(cansForEach) cans"
+            canLabel.text = "\(cansForEach) cans"
         } else {
-            canLabel.text = "Beers for each: \(cansForEach) cans, with \(remCans) left over"
+            canLabel.text = "\(cansForEach) cans, with \(remCans) left over"
         }
         
     }
