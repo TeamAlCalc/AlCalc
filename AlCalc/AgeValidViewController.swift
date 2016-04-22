@@ -1,6 +1,6 @@
 //
 //  AgeValidViewController.swift
-//  AlCalc.
+//  AlCalc
 //
 //  Created by Ethan on 3/16/16.
 //  Copyright © 2016 Team AlCalc. All rights reserved.
