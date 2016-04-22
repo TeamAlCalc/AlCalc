@@ -13,7 +13,7 @@ import SystemConfiguration
 
 
 class HomepageViewController: UIViewController {
-    
+    //kennon is the man hoe
     var toPass: String!
     
     @IBAction func backToHome(segue: UIStoryboardSegue){}
