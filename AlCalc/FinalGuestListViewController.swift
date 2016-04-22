@@ -20,7 +20,8 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
     let dateFormatter = NSDateFormatter()
     let notifID = String(random())
     
-    
+    @IBAction func backSymbol2(segue: UIStoryboardSegue){}
+    @IBOutlet weak var SymbolButton: UIToolbar!
     
     @IBOutlet weak var partyOver: UIButton!
     
@@ -54,6 +55,10 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         
     }
     
+    @IBAction func SymbolClicked2(sender: AnyObject) {
+        performSegueWithIdentifier("PassSymbol2", sender: nil)
+
+    }
     func tableView(tview: UITableView, numberOfRowsInSection section: Int) -> Int {
         return finalNames.count
     }

@@ -18,8 +18,11 @@ class HomepageViewController: UIViewController {
     
     @IBAction func backToHome(segue: UIStoryboardSegue){}
     @IBAction func cancelToHome(segue: UIStoryboardSegue){}
+    
 
 
+
+    @IBOutlet weak var Symbol: UIToolbar!
 
     @IBOutlet weak var newPartyButton: UIButton!
     
@@ -53,6 +56,8 @@ class HomepageViewController: UIViewController {
         
     }
     
+    
+   
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "NotificationSegue" {
            UIApplication.sharedApplication().applicationIconBadgeNumber = 0

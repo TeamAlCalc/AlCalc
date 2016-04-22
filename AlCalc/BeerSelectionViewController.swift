@@ -96,6 +96,15 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
+    /* Tried to make it swipe delete just 
+     for second viewTable(chosenBeer) but allows it on both. I tried an if statment but that didnt work either, maybe you can figure it out smarty pants
+    func tableView(chosenBeer: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        if editingStyle == .Delete {
+            self.beer.removeAtIndex(indexPath.row)
+            self.chosenBeer.reloadData()
+        }
+    }
+*/
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         if tableView == beerListTable {
             beerListTable.deselectRowAtIndexPath(indexPath, animated: true)
