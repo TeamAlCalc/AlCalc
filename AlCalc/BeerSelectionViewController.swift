@@ -168,14 +168,14 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         
         
         let cansForEach = String(format: "%.f", cans)
-        let remCans = (beerQty % numOfGuests!) //Calculates any remaining beer cans
+        let remCans = Int((beerQty % numOfGuests!)) //Calculates any remaining beer cans
         
-        priceDisplay.text = "$\(roundValue.format(priceFormat))"
+        priceDisplay.text = "$\(roundValue.format(priceFormat)) each"
         
         if remCans == 0 {
-            canLabel.text = "\(cansForEach) cans"
+            canLabel.text = "\(cansForEach) cans each"
         } else {
-            canLabel.text = "\(cansForEach) cans, with \(remCans) left over"
+            canLabel.text = "\(cansForEach) cans each, \(remCans) extra"
         }
         
     }

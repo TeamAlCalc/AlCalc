@@ -96,12 +96,12 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
             index = indicies[indexPath.row]
         }
 
-        userDefaults.setObject(parties[indexPath.row].guestList, forKey:"oldPartyGuestList")
-        userDefaults.setObject(parties[indexPath.row].payed, forKey: "oldPartyPayed")
+        userDefaults.setObject(parties[index].guestList, forKey:"oldPartyGuestList")
+        userDefaults.setObject(parties[index].payed, forKey: "oldPartyPayed")
 
-        userDefaults.setObject(parties[indexPath.row].cans, forKey: "oldCanLabel")
-        userDefaults.setObject(parties[indexPath.row].price, forKey: "oldPriceLabel")
-        userDefaults.setObject(parties[indexPath.row].notifID, forKey: "oldPartyNotifID")
+        userDefaults.setObject(parties[index].cans, forKey: "oldCanLabel")
+        userDefaults.setObject(parties[index].price, forKey: "oldPriceLabel")
+        userDefaults.setObject(parties[index].notifID, forKey: "oldPartyNotifID")
         
         userDefaults.synchronize()
         
