@@ -39,13 +39,15 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         addParty()
     }
     
+    //load data and table view controllers
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateStyle = .MediumStyle
         tview.delegate = self
         tview.dataSource = self
         tview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-
+        
+        
         finalNames = userDefaults.objectForKey("currentPartyGuestList") as! [String]
         payed = userDefaults.objectForKey("currentPartyPayed") as! [Bool]
         purchasedBeer = userDefaults.objectForKey("currentPartyBeerList") as! [String]
@@ -63,9 +65,8 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         return finalNames.count
     }
     
-    
+    //load cells and names
     func tableView(tview: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell =
             tview.dequeueReusableCellWithIdentifier("Cell")
         cell!.textLabel!.text = finalNames[indexPath.row]
@@ -76,6 +77,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         return cell!
     }
     
+    //fucntion if a cell is selected
     func tableView(tview: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         tview.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tview.cellForRowAtIndexPath(indexPath)
@@ -132,6 +134,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         }
         if alert == true {
             
+            //local notification to alert user next day of unpaid members
             let reminder = UILocalNotification()
             
             reminder.fireDate = NSDate(timeIntervalSinceNow: 10)

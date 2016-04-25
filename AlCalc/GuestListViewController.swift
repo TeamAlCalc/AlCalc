@@ -88,6 +88,7 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     
     @IBAction func addPressed(sender: AnyObject?) {
         
+        //popup to add names to guest list
         let alert = UIAlertController(title: "Add Guest", message: "Add Names of Guest", preferredStyle: UIAlertControllerStyle.Alert)
         
         let okaction = UIAlertAction(title: "Add", style: .Default,

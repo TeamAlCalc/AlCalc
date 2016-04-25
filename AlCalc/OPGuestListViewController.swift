@@ -25,6 +25,8 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var ABV: UILabel!
     @IBOutlet weak var percentage: UILabel!
     
+    
+    //function to load view with tables and data
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -45,7 +47,7 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
         return finalNames.count
     }
     
-    
+    //function to load names and colors of cells
     func tableView(tview: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tview.dequeueReusableCellWithIdentifier("Cell")
         cell!.textLabel!.text = finalNames[indexPath.row]
@@ -56,6 +58,7 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
         return cell!
     }
     
+    //function to act if cells have been clicked, turning them green, and saving the data
     func tableView(tview: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         tview.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tview.cellForRowAtIndexPath(indexPath)
@@ -77,6 +80,7 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
     
+    //function to update specific parties
     func updateParty() {
         let moc = DataController().managedObjectContext
         let request = NSFetchRequest(entityName: "Party")
@@ -97,6 +101,7 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
                             allPayed = false
                         }
                     }
+                    //if all the guests have now payed, it cancels notifciation
                     if allPayed {
                         let list = UIApplication.sharedApplication().scheduledLocalNotifications! as [UILocalNotification]
                         if list.count > 0 {

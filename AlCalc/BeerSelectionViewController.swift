@@ -51,10 +51,13 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         numOfGuests = Double(newNames.count)
         let temp = userDefaults.objectForKey("currentPartyBeerList") as? [String]
+        
+        //test if there is already a beerlist created for the new party
         if temp! != [] {
             beer = temp!
             whenClicked(nil)
         }
+        //initialize table view controllers
         beerListTable.dataSource = self
         beerListTable.delegate = self
         beerListTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -62,6 +65,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         chosenBeer.delegate = self
         chosenBeer.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell2")
         
+        //set color and bored of tables
         beerListTable.layer.borderWidth = 1.0; beerListTable.layer.cornerRadius = 8.0;
         self.beerListTable.layer.borderColor = UIColor(red:100/255.0, green:100/255.0, blue:100/255.0, alpha: 1.0).CGColor
         chosenBeer.layer.borderWidth = 1.0; chosenBeer.layer.cornerRadius = 8.0;
@@ -76,6 +80,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     // Table controllers
     //
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //initialize cells for each table
         if tableView == beerListTable {
             return beerList.count
         } else {
@@ -84,28 +89,32 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //name cell for beerList
         if tableView == beerListTable {
             let cell = beerListTable.dequeueReusableCellWithIdentifier("Cell")
             cell!.textLabel!.text = beerList[indexPath.row].name
             return cell!
-            
+        
+        //name cell for purchase beer list
         } else {
             let cell = chosenBeer.dequeueReusableCellWithIdentifier("Cell2")
             cell!.textLabel!.text = beer[indexPath.row]
             return cell!
         }
     }
-    
-    /* Tried to make it swipe delete just 
-     for second viewTable(chosenBeer) but allows it on both. I tried an if statment but that didnt work either, maybe you can figure it out smarty pants
-    func tableView(chosenBeer: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
-        if editingStyle == .Delete {
-            self.beer.removeAtIndex(indexPath.row)
-            self.chosenBeer.reloadData()
+
+    func tableView(tview: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        //allow deletion from chosen beer
+        if tview == chosenBeer {
+            if editingStyle == .Delete {
+                self.beer.removeAtIndex(indexPath.row)
+                self.chosenBeer.reloadData()
+            }
         }
     }
-*/
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        //allow selection of beer and add to chosenbeer
         if tableView == beerListTable {
             beerListTable.deselectRowAtIndexPath(indexPath, animated: true)
             let cell = beerListTable.cellForRowAtIndexPath(indexPath)
@@ -115,7 +124,6 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
             userDefaults.setObject(beer, forKey: "currentPartyBeerList")
             userDefaults.synchronize()
             self.chosenBeer.reloadData()
-            
         } else {
             chosenBeer.deselectRowAtIndexPath(indexPath, animated: true)
         }
@@ -123,8 +131,10 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     
 
     @IBAction func BeerRunClicked(sender: AnyObject) {
+        //Segue if the user has chosen beer
         if beer.count > 0 {
             self.performSegueWithIdentifier("PassList", sender: newNames)
+        //prevent segue if beer hasnt been selected
         } else {
             let alert = UIAlertController(title: "Error", message: "No beer, no party.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
@@ -134,7 +144,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     }
    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        //save information to user defaults for loading into the next viewcontroller
         if(segue.identifier == "PassList"){
             currentPartyFL = true
             
@@ -159,6 +169,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     @IBAction func whenClicked(sender: AnyObject?) {
         beerPrice = 0.0
         beerQty = 0.0
+        //sum the price and qty of chosen beer
         for name in beer {
             for beerItem in beerList {
                 if beerItem.name.lowercaseString.containsString(name.lowercaseString) {
@@ -175,6 +186,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         
         roundValue = Double(round(priceValue * 100)/100)
         
+        //set labels based on price and qty
         
         let cansForEach = String(format: "%.f", cans)
         let remCans = Int((beerQty % numOfGuests!)) //Calculates any remaining beer cans
@@ -190,6 +202,8 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
     }
     
 }
+
+//function to format double into 2 decimal dollar ammount
 extension Double {
     func format(f: String) -> String {
         return String(format: "%\(f)f", self)

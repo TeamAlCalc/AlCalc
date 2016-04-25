@@ -18,6 +18,7 @@ class FirstTimeViewController: UIViewController {
     
     var values: [AnyObject] = []
     
+    //load information
     override func viewDidLoad() {
         let dob = loadDob()
         if dob != nil {
@@ -28,6 +29,7 @@ class FirstTimeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //if age is validated
         if AgeValidated{
             currentPartyFL = userDefaults.objectForKey("currentPartyFL") as! Bool
             dispatch_async(dispatch_get_main_queue()){
@@ -50,10 +52,12 @@ class FirstTimeViewController: UIViewController {
 
     }
     
+    //load DOB from userdefaults
     func loadDob() -> String? {
         return userDefaults.objectForKey("dob") as? String
         
     }
+    //load webscraped beer from webserver
     func loadBeer(){
         let url = NSURL(string: "http://webdev.cislabs.uncw.edu/~sam7826/get.php")
         let data = NSData(contentsOfURL: url!)

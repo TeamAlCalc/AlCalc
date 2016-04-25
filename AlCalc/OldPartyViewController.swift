@@ -36,37 +36,33 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
     // Table controllers
     //
     func tableView(oldPartyTable: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("1")
         indicies = []
         parties = loadParties()
         if notif == false {
             return parties.count
         } else {
-            
+            //test for parties in which not all have payed
             var count = 0
             for party in parties {
-                print("1.00")
                 var unpayed = false
                 for flag in party.payed {
-                    print("1.01")
                     if flag == false {
                         unpayed = true
                     }
                 }
                 if unpayed {
                     count+=1
-                    print("1.1")
                     indicies.append(parties.indexOf(party)!)
-                    print("1.2")
                 }
             }
             return count
         }
     }
     
+    
     func tableView(oldPartyTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("2")
         parties = loadParties()
+        //if page was not loaded from notifications button
         if notif == false {
             let cell = oldPartyTable.dequeueReusableCellWithIdentifier("Cell")
             cell!.textLabel!.text = parties[indexPath.row].date
@@ -77,6 +73,7 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
             }
             return cell!
             
+        //if page was loaded from old parties button
         } else {
             let cell = oldPartyTable.dequeueReusableCellWithIdentifier("Cell")
             cell!.textLabel!.text = parties[indexPath.row].date
@@ -85,8 +82,8 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    //fucntion to act if a row was selected
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        print("3")
         parties = loadParties()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -109,6 +106,7 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    //function to pass information during segues
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if(segue.identifier=="OldPartyGuestListSegue"){
@@ -118,7 +116,7 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
        
     }
   
-    
+    //function to load old parties
     func loadParties() -> [Party] {
         
         
