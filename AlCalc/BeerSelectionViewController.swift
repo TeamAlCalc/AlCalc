@@ -73,7 +73,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         
         
         // Do any additional setup after loading the view, typically from a nib.
-
+        
     }
     
     //
@@ -94,15 +94,15 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
             let cell = beerListTable.dequeueReusableCellWithIdentifier("Cell")
             cell!.textLabel!.text = beerList[indexPath.row].name
             return cell!
-        
-        //name cell for purchase beer list
+            
+            //name cell for purchase beer list
         } else {
             let cell = chosenBeer.dequeueReusableCellWithIdentifier("Cell2")
             cell!.textLabel!.text = beer[indexPath.row]
             return cell!
         }
     }
-
+    
     func tableView(tview: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         //allow deletion from chosen beer
         if tview == chosenBeer {
@@ -112,7 +112,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
             }
         }
     }
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         //allow selection of beer and add to chosenbeer
         if tableView == beerListTable {
@@ -129,12 +129,12 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-
+    
     @IBAction func BeerRunClicked(sender: AnyObject) {
         //Segue if the user has chosen beer
         if beer.count > 0 {
             self.performSegueWithIdentifier("PassList", sender: newNames)
-        //prevent segue if beer hasnt been selected
+            //prevent segue if beer hasnt been selected
         } else {
             let alert = UIAlertController(title: "Error", message: "No beer, no party.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
@@ -142,7 +142,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         }
         
     }
-   
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //save information to user defaults for loading into the next viewcontroller
         if(segue.identifier == "PassList"){
@@ -158,7 +158,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
             
             userDefaults.setObject(currentPartyFL, forKey:"currentPartyFL")
             userDefaults.synchronize()
-         
+            
         }
     }
     override func didReceiveMemoryWarning() {
@@ -180,7 +180,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         priceValue = Double(beerPrice / numOfGuests!) //Total price based on number of friends
-
+        
         cans = Double(beerQty / numOfGuests!) //Number of beer cans each guest will recieve
         
         

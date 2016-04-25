@@ -20,34 +20,34 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     var payed: [Bool] = []
     
     var names = [String]()
-   
+    
     //presents tableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-    
+        
     }
     
     //indicates number of names( allocates row)
-  
+    
     func tableView(tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
-            return names.count
+                   numberOfRowsInSection section: Int) -> Int {
+        return names.count
     }
     //tells what string(names) will be in each row
-
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell =
-        tableView.dequeueReusableCellWithIdentifier("Cell")
+            tableView.dequeueReusableCellWithIdentifier("Cell")
         cell!.textLabel!.text = names[indexPath.row]
         
         return cell!
     }
     
-  
-   //allows ability to swipe delete
+    
+    //allows ability to swipe delete
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if editingStyle == .Delete {
@@ -58,7 +58,7 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-       
+        
     }
     
     
@@ -93,26 +93,26 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
         let alert = UIAlertController(title: "Add Guest", message: "Add Names of Guest", preferredStyle: UIAlertControllerStyle.Alert)
         
         let okaction = UIAlertAction(title: "Add", style: .Default,
-            handler: {(action: UIAlertAction!) -> Void in
-                let textField = alert.textFields!.first
-                self.names.append(textField!.text!)
-                self.tableView.reloadData()
-                self.payed.append(false)
-            })
+                                     handler: {(action: UIAlertAction!) -> Void in
+                                        let textField = alert.textFields!.first
+                                        self.names.append(textField!.text!)
+                                        self.tableView.reloadData()
+                                        self.payed.append(false)
+        })
         let cancelaction = UIAlertAction(title: "Cancel", style: .Default) { (action: UIAlertAction) -> Void in
         }
         
-       alert.addTextFieldWithConfigurationHandler {(textField : UITextField!) -> Void in
+        alert.addTextFieldWithConfigurationHandler {(textField : UITextField!) -> Void in
             textField.placeholder = "Drinking Buds"
             
-    }
+        }
         alert.addAction(cancelaction)
         alert.addAction(okaction)
-
+        
         self.presentViewController(alert, animated: true, completion: nil)
     }
-
-  
+    
+    
     
     
 }

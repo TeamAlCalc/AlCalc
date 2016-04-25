@@ -26,7 +26,7 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var percentage: UILabel!
     
     
-    //function to load view with tables and data
+    //function to load view with tables and data.
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -65,8 +65,6 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
         
         if cell!.backgroundColor != green {
             cell!.backgroundColor = green
-            print(indexPath.row)
-            print(payed)
             payed[indexPath.row] = true
         } else {
             cell!.backgroundColor = UIColor.clearColor()
@@ -121,5 +119,5 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
         } catch {
             fatalError("Failure to save context: \(error)")
         }
-    }    
+    }
 }

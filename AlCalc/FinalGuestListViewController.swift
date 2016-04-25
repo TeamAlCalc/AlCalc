@@ -55,11 +55,12 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         priceLabel.text = userDefaults.objectForKey("currentPriceLabel") as? String
         canLabel.text = (userDefaults.objectForKey("currentCanLabel") as! String)
         
+        
     }
     
     @IBAction func SymbolClicked2(sender: AnyObject) {
         performSegueWithIdentifier("PassSymbol2", sender: nil)
-
+        
     }
     func tableView(tview: UITableView, numberOfRowsInSection section: Int) -> Int {
         return finalNames.count
@@ -91,6 +92,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         }
         userDefaults.setObject(payed, forKey: "currentPartyPayed")
         userDefaults.synchronize()
+        tview.reloadData()
     }
     
     
@@ -105,7 +107,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         
         // we set up our entity by selecting the entity and context that we're targeting
         let entity = NSEntityDescription.insertNewObjectForEntityForName("Party", inManagedObjectContext: moc) as! Party
-
+        
         
         // add our data
         entity.setValue(finalNames, forKey: "guestList")
@@ -115,7 +117,7 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
         entity.setValue(priceLabel.text, forKey: "price")
         entity.setValue(canLabel.text, forKey: "cans")
         entity.setValue(notifID, forKey: "notifID")
-
+        
         
         // we save our entity
         do {
@@ -145,17 +147,11 @@ class FinalGuestListViewController : UIViewController,UITableViewDataSource, UIT
             reminder.category = notifID
             
             UIApplication.sharedApplication().scheduleLocalNotification(reminder)
-       
+            
         }
-
+        
         performSegueWithIdentifier("DockCurrentToHomepage", sender: nil)
         
     }
-    
-
-    
-    
-    
-    
     
 }

@@ -3,7 +3,7 @@
 //  AlCalc
 //
 //  Created by Ethan on 4/19/16.
-//  Copyright © 2016 Team AlCalc. All rights reserved.
+//  Copyright © 2016 Team AlCalc. All rights reserved
 //
 import UIKit
 import CoreData
@@ -12,15 +12,17 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var oldPartyTable: UITableView!
     
-    @IBAction func backToOldParty(segue: UIStoryboardSegue){}
-
+    @IBAction func backToOldParty(segue: UIStoryboardSegue){
+        print(index)
+        self.oldPartyTable.reloadData()
+    }
     
-    let red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.25)
+    
+    let red = UIColor.redColor()//UIColor(red: 1, green: 0, blue: 0, alpha: 0.25)
     
     var index: Int!
     var notif: Bool!
     var parties: [Party]!
-    var unpayed: [Bool]!
     var indicies: [Int]!
     
     
@@ -66,14 +68,21 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
         if notif == false {
             let cell = oldPartyTable.dequeueReusableCellWithIdentifier("Cell")
             cell!.textLabel!.text = parties[indexPath.row].date
+            var allPayed = true
             for guestPayed in parties[indexPath.row].payed {
                 if guestPayed == false {
-                    cell!.backgroundColor = red
+                    allPayed = false
                 }
+            }
+            if allPayed {
+                cell!.backgroundColor = UIColor.clearColor()
+            } else if cell!.backgroundColor != red{
+                cell!.backgroundColor = red
+                
             }
             return cell!
             
-        //if page was loaded from old parties button
+            //if page was loaded from old parties button
         } else {
             let cell = oldPartyTable.dequeueReusableCellWithIdentifier("Cell")
             cell!.textLabel!.text = parties[indexPath.row].date
@@ -92,10 +101,10 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             index = indicies[indexPath.row]
         }
-
+        
         userDefaults.setObject(parties[index].guestList, forKey:"oldPartyGuestList")
         userDefaults.setObject(parties[index].payed, forKey: "oldPartyPayed")
-
+        
         userDefaults.setObject(parties[index].cans, forKey: "oldCanLabel")
         userDefaults.setObject(parties[index].price, forKey: "oldPriceLabel")
         userDefaults.setObject(parties[index].notifID, forKey: "oldPartyNotifID")
@@ -113,9 +122,9 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
             let destination = (segue.destinationViewController as! OPGuestListViewController)
             destination.index = index
         }
-       
+        
     }
-  
+    
     //function to load old parties
     func loadParties() -> [Party] {
         
@@ -131,7 +140,7 @@ class OldPartyViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
