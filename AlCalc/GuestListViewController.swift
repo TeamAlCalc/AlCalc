@@ -52,6 +52,7 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if editingStyle == .Delete {
             self.names.removeAtIndex(indexPath.row)
+            self.payed.removeAtIndex(indexPath.row)
             self.tableView.reloadData()
         }
     }
@@ -77,7 +78,7 @@ class GuestListViewController : UIViewController, UITableViewDataSource {
     // BeerSelectionViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if( segue.identifier == "passInt"){
+        if(segue.identifier == "passInt"){
             let destination = (segue.destinationViewController as! BeerSelectionViewController)
             destination.newNames = names
             destination.payed = payed

@@ -65,6 +65,8 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
         
         if cell!.backgroundColor != green {
             cell!.backgroundColor = green
+            print(indexPath.row)
+            print(payed)
             payed[indexPath.row] = true
         } else {
             cell!.backgroundColor = UIColor.clearColor()
@@ -89,6 +91,7 @@ class OPGuestListViewController : UIViewController, UITableViewDelegate, UITable
                 if fetchResults.count != 0{
                     let managedObject = fetchResults[index]
                     managedObject.setValue(payed, forKey: "payed")
+                    print(payed)
                     
                     do {
                         try moc.save()
