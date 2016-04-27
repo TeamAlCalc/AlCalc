@@ -11,6 +11,7 @@
 		A9122D851CADBDEC00A98FC4 /* GuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */; };
 		A92A9AF71CBC6BE1005F946D /* FinalGuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */; };
 		A9C3045D1CC70D2F00D27D95 /* OPGuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */; };
+		AA1D24361CD06A05005B0F89 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D24351CD06A05005B0F89 /* TermsOfServiceViewController.swift */; };
 		AA20C2801CAA1E0900E9E0E7 /* BeerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */; };
 		AA5811C81CAC84C50060E27C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C71CAC84C50060E27C /* User.swift */; };
 		AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */; };
@@ -52,6 +53,7 @@
 		A9122D841CADBDEC00A98FC4 /* GuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestListViewController.swift; sourceTree = "<group>"; };
 		A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalGuestListViewController.swift; sourceTree = "<group>"; };
 		A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPGuestListViewController.swift; sourceTree = "<group>"; };
+		AA1D24351CD06A05005B0F89 /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerSelectionViewController.swift; sourceTree = "<group>"; };
 		AA5811C71CAC84C50060E27C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				164007A51CC982C800FB59B4 /* LogoHome.png */,
 				AAF91B2F1CAC95520061D990 /* AgeValidViewController.swift */,
+				AA1D24351CD06A05005B0F89 /* TermsOfServiceViewController.swift */,
 				AAEB21FC1C9A348C00035524 /* AppDelegate.swift */,
 				AA5811C71CAC84C50060E27C /* User.swift */,
 				AA9D0A021C9F1E5800759BF5 /* HomepageViewController.swift */,
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A92A9AF71CBC6BE1005F946D /* FinalGuestListViewController.swift in Sources */,
+				AA1D24361CD06A05005B0F89 /* TermsOfServiceViewController.swift in Sources */,
 				AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */,
 				AA9D0A031C9F1E5800759BF5 /* HomepageViewController.swift in Sources */,
 				AA8C8EFA1CACA1D200265D0D /* Alcohol.swift in Sources */,

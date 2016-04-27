@@ -6,6 +6,62 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--TermsOfServiceViewControllera-->
+        <scene sceneID="3MG-ni-8FQ">
+            <objects>
+                <viewController title="TermsOfServiceViewControllera" id="vn0-xY-WBw" customClass="TermsOfServiceViewController" customModule="AlCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QIf-LN-ugn"/>
+                        <viewControllerLayoutGuide type="bottom" id="ztw-fo-ShF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uls-Ni-4Vq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AlCalc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccN-a4-vKZ">
+                                <rect key="frame" x="20" y="20" width="143" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoHome.png" translatesAutoresizingMaskIntoConstraints="NO" id="SI5-hs-Vx0">
+                                <rect key="frame" x="158" y="20" width="197" height="197"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="27" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRm-Rn-bMo">
+                                <rect key="frame" x="35" y="200" width="305" height="338"/>
+                                <mutableString key="text">AlCalc Terms of Service
+
+Listen up. By agreeing to these terms of service, you are acknowledging that the information you provide is true, to the best of your knowledge, regarding your birthdate. Failure to follow these guidelines will result in immediate action, potentially banning you from use of this application.  All services and content within this application is under copyright protection by AlCalc Inc. In other words, don’t copy our stuff or we will sue you. AlCalc Inc. is also not responsible for any user decisions made while using this app, or in response to this applications’s services. 
+
+By clicking “Agree” on the next page you conform that:
+- I have read and accepted the Terms of Service provided by AlCalc Inc. 
+- I am at least 21 years of age and the information regarding my birthdate is true to the best of my knowledge. 
+- AlCalc Inc. is not responsible for any decisions or events that are made by users from using AlCalc services. </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QK5-qC-7ZE">
+                                <rect key="frame" x="277" y="590" width="63" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="vn0-xY-WBw" eventType="touchUpInside" id="QBG-36-vuZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="backButton" destination="QK5-qC-7ZE" id="Pe8-dY-aRa"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="BackToHomeSegue" animates="NO" id="XPO-zl-kMF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cp2-76-cyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="154.5" y="-1282.5"/>
+        </scene>
         <!--AgeValidViewController-->
         <scene sceneID="nig-QT-ifu">
             <objects>
@@ -38,6 +94,9 @@
                                 <state key="normal" title="Terms of Service">
                                     <color key="titleColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tosAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="whu-hg-kUW"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aIm-lQ-iOW">
                                 <rect key="frame" x="0.0" y="369" width="375" height="216"/>
@@ -68,6 +127,7 @@
                         <outlet property="ofAgeButton" destination="2Vw-4D-kd7" id="HTw-ig-hN7"/>
                         <outlet property="tosButton" destination="7XG-jY-Xi1" id="aB4-Tx-yEw"/>
                         <segue destination="Gft-ba-Ubb" kind="showDetail" identifier="Homepage" action="showViewController:sender:" id="L4q-Yq-kvr"/>
+                        <segue destination="vn0-xY-WBw" kind="show" identifier="tosSegue" animates="NO" id="wii-Uz-xY9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -181,6 +241,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="Gft-ba-Ubb" kind="show" id="XmD-7P-dYJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4b-Jg-giI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xhf-RZ-C8E" userLabel="Exit" sceneMemberID="exit"/>
@@ -248,10 +311,11 @@
                                             <segue destination="POT-d1-Ebg" kind="show" identifier="NotificationSegue" id="H3t-ve-DEh"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Settings" width="86" id="V0S-lx-Lp1">
+                                    <barButtonItem title="Symbols" width="86" id="V0S-lx-Lp1">
                                         <color key="tintColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="SymbolClicked:" destination="Gft-ba-Ubb" id="srx-NF-KAh"/>
+                                            <action selector="GoToSymbols:" destination="Gft-ba-Ubb" id="zvj-n3-tBx"/>
+                                            <segue destination="b8B-Bq-8Lc" kind="show" id="rVR-Sq-Cf4"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -263,6 +327,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Symbol" destination="fW4-AD-ufm" id="Dqc-Z9-SEm"/>
+                        <outlet property="SymbolsButton" destination="V0S-lx-Lp1" id="cPN-ht-xQV"/>
                         <outlet property="dockCurrentPartyButton" destination="a5w-zS-fS9" id="LUv-aq-vrm"/>
                         <outlet property="dockNotifyButton" destination="RvB-8i-II3" id="VeH-2b-JgS"/>
                         <outlet property="homepageHeaderLabel" destination="zBu-AE-kXZ" id="n5U-aM-Ven"/>
@@ -519,7 +584,7 @@
                                 <color key="textColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-j4-dya">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-j4-dya">
                                 <rect key="frame" x="65" y="543" width="200" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -685,7 +750,7 @@
                                 <color key="textColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4j-pt-UXZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4j-pt-UXZ">
                                 <rect key="frame" x="73" y="529" width="213" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -731,6 +796,232 @@
             </objects>
             <point key="canvasLocation" x="684.5" y="1264.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Y3W-cO-nRW">
+            <objects>
+                <viewController id="NBG-iR-Qae" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lz8-Zb-s3H"/>
+                        <viewControllerLayoutGuide type="bottom" id="QV7-yD-fKR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cva-de-pKk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BeerRun" translatesAutoresizingMaskIntoConstraints="NO" id="XR0-ak-HNc">
+                                <rect key="frame" x="24" y="524" width="52" height="60"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BeerBottle" translatesAutoresizingMaskIntoConstraints="NO" id="s0K-po-ObR">
+                                <rect key="frame" x="41" y="384" width="18" height="56"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BeerButton" translatesAutoresizingMaskIntoConstraints="NO" id="3CH-h3-ZDI">
+                                <rect key="frame" x="20" y="74" width="67" height="66"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Calculator" translatesAutoresizingMaskIntoConstraints="NO" id="AjZ-Yj-GHi">
+                                <rect key="frame" x="32" y="238" width="49" height="62"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cart" translatesAutoresizingMaskIntoConstraints="NO" id="L4V-uO-ALK">
+                                <rect key="frame" x="20" y="155" width="56" height="62"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spilled" translatesAutoresizingMaskIntoConstraints="NO" id="XAd-gL-YDK">
+                                <rect key="frame" x="13" y="585" width="104" height="82"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwi-xl-D0k">
+                                <rect key="frame" x="39" y="314" width="42" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpW-H7-Mjt">
+                                <rect key="frame" x="39" y="460" width="42" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Select Beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFX-1L-Cjf">
+                                <rect key="frame" x="95" y="96" width="192" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Beer Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5H-Mp-dhc">
+                                <rect key="frame" x="95" y="171" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Calculate " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mam-eh-ufm">
+                                <rect key="frame" x="95" y="254" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Price for each person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYm-q1-7pj">
+                                <rect key="frame" x="95" y="329" width="205" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Beers per person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRE-lp-J1W">
+                                <rect key="frame" x="95" y="397" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": ABV per beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtu-D1-bu1">
+                                <rect key="frame" x="95" y="470" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Beer Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vn4-1v-EtN">
+                                <rect key="frame" x="95" y="539" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": End Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgs-Oy-z3I">
+                                <rect key="frame" x="95" y="606" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H2h-EZ-IjS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Symbols" id="vS0-dd-zcR">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="hm5-AW-pqq">
+                                            <color key="tintColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="7GI-oL-Fln" kind="unwind" unwindAction="backSymbol2:" id="v8t-uw-0BE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ANv-3k-8Fc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7GI-oL-Fln" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="614.5" y="-445.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9m8-VS-2fI">
+            <objects>
+                <viewController id="b8B-Bq-8Lc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="16e-gb-OHa"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Rb-wh-jqC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uld-gN-G38">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BeerRun" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-fK-SPq">
+                                <rect key="frame" x="24" y="524" width="52" height="60"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BeerBottle" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-VP-gGN">
+                                <rect key="frame" x="41" y="384" width="18" height="56"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BeerButton" translatesAutoresizingMaskIntoConstraints="NO" id="O1F-I7-oDP">
+                                <rect key="frame" x="20" y="74" width="67" height="66"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Calculator" translatesAutoresizingMaskIntoConstraints="NO" id="PMg-yI-X7a">
+                                <rect key="frame" x="32" y="238" width="49" height="62"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cart" translatesAutoresizingMaskIntoConstraints="NO" id="BiK-fy-nzR">
+                                <rect key="frame" x="20" y="155" width="56" height="62"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spilled" translatesAutoresizingMaskIntoConstraints="NO" id="CRs-dR-MgF">
+                                <rect key="frame" x="13" y="585" width="104" height="82"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOU-9f-byx">
+                                <rect key="frame" x="39" y="314" width="42" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Kp-Sf-lQD">
+                                <rect key="frame" x="39" y="460" width="42" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Select Beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Mg-MS-nD0">
+                                <rect key="frame" x="95" y="96" width="192" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Beer Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oa6-LO-HVc">
+                                <rect key="frame" x="95" y="171" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Calculate " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uat-2F-mCq">
+                                <rect key="frame" x="95" y="254" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Price for each person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsJ-no-vt8">
+                                <rect key="frame" x="95" y="329" width="205" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Beers per person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fv-xX-diU">
+                                <rect key="frame" x="95" y="397" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": ABV per beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF9-XW-4uV">
+                                <rect key="frame" x="95" y="470" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": Beer Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwE-QP-hs9">
+                                <rect key="frame" x="95" y="539" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": End Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLX-PZ-4Cw">
+                                <rect key="frame" x="95" y="606" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5N-cw-X1b">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Symbols" id="wv8-yJ-ngN">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="cX9-R9-Cgs">
+                                            <color key="tintColor" red="0.0" green="0.38743984529999997" blue="0.80324519230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="z7C-4j-D8P" kind="unwind" unwindAction="backToHome:" id="ahn-eI-8cD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QgW-8c-RlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="z7C-4j-D8P" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-337.5" y="910.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BeerBottle" width="100" height="307"/>
@@ -742,8 +1033,9 @@
         <image name="Spilled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y3W-WU-6K2"/>
-        <segue reference="RbV-Xp-I34"/>
+        <segue reference="AMp-XE-2eM"/>
+        <segue reference="XmD-7P-dYJ"/>
         <segue reference="H3t-ve-DEh"/>
+        <segue reference="XPO-zl-kMF"/>
     </inferredMetricsTieBreakers>
 </document>

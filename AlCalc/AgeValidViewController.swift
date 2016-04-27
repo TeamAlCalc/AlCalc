@@ -23,11 +23,16 @@ class AgeValidViewController: UIViewController {
     
     //Prepare data to be passed during segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let yourNextViewController = (segue.destinationViewController as! HomepageViewController)
-        yourNextViewController.toPass = dateOfBirth
-        
+        if segue.identifier != "tosSegue" {
+            let yourNextViewController = (segue.destinationViewController as! HomepageViewController)
+            yourNextViewController.toPass = dateOfBirth
+        }
     }
     
+    @IBAction func tosAction(sender: AnyObject) {
+        
+        performSegueWithIdentifier("tosSegue", sender: nil)
+    }
     //Load page, load any other information needed to be presented on page
     override func viewDidLoad() {
         super.viewDidLoad()

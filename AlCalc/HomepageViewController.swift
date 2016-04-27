@@ -23,10 +23,14 @@ class HomepageViewController: UIViewController {
     @IBOutlet weak var oldPartyButton: UIButton!
     @IBOutlet weak var dockNotifyButton: UIBarButtonItem!
     @IBOutlet weak var homepageHeaderLabel: UILabel!
+    @IBOutlet weak var SymbolsButton: UIBarButtonItem!
     
     //Perform segue on notification button
     @IBAction func notifyButtonSegue(sender: AnyObject) {
         performSegueWithIdentifier("NotificationSegue", sender: nil)
+    }
+    @IBAction func GoToSymbols(sender: AnyObject) {
+        performSegueWithIdentifier("GoToSymbols", sender: nil)
     }
     
     @IBOutlet weak var dockCurrentPartyButton: UIBarButtonItem!

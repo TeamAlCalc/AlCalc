@@ -183,7 +183,7 @@ class BeerSelectionViewController: UIViewController, UITableViewDataSource, UITa
         
         cans = Double(beerQty / numOfGuests!) //Number of beer cans each guest will recieve
         
-        
+        abvLabel.text = "5%"
         roundValue = Double(round(priceValue * 100)/100)
         
         //set labels based on price and qty
