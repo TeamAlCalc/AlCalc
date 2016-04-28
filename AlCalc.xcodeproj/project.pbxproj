@@ -12,6 +12,9 @@
 		A92A9AF71CBC6BE1005F946D /* FinalGuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */; };
 		A9C3045D1CC70D2F00D27D95 /* OPGuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */; };
 		AA1D24361CD06A05005B0F89 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D24351CD06A05005B0F89 /* TermsOfServiceViewController.swift */; };
+		AA1D243A1CD16756005B0F89 /* GuestListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D24391CD16756005B0F89 /* GuestListTest.swift */; };
+		AA1D243C1CD16D84005B0F89 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D243B1CD16D84005B0F89 /* Calculation.swift */; };
+		AA1D24401CD16E13005B0F89 /* oldparty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D243F1CD16E13005B0F89 /* oldparty.swift */; };
 		AA20C2801CAA1E0900E9E0E7 /* BeerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */; };
 		AA5811C81CAC84C50060E27C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C71CAC84C50060E27C /* User.swift */; };
 		AA5811CA1CAC94290060E27C /* FirstTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */; };
@@ -26,7 +29,6 @@
 		AAEB22021C9A348C00035524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22001C9A348C00035524 /* Main.storyboard */; };
 		AAEB22041C9A348C00035524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22031C9A348C00035524 /* Assets.xcassets */; };
 		AAEB22071C9A348C00035524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB22051C9A348C00035524 /* LaunchScreen.storyboard */; };
-		AAEB22121C9A348C00035524 /* AlCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB22111C9A348C00035524 /* AlCalcTests.swift */; };
 		AAEB221D1C9A348C00035524 /* AlCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB221C1C9A348C00035524 /* AlCalcUITests.swift */; };
 		AAF91B301CAC95520061D990 /* AgeValidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF91B2F1CAC95520061D990 /* AgeValidViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,9 @@
 		A92A9AF61CBC6BE1005F946D /* FinalGuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalGuestListViewController.swift; sourceTree = "<group>"; };
 		A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPGuestListViewController.swift; sourceTree = "<group>"; };
 		AA1D24351CD06A05005B0F89 /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		AA1D24391CD16756005B0F89 /* GuestListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestListTest.swift; sourceTree = "<group>"; };
+		AA1D243B1CD16D84005B0F89 /* Calculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
+		AA1D243F1CD16E13005B0F89 /* oldparty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oldparty.swift; sourceTree = "<group>"; };
 		AA20C27F1CAA1E0900E9E0E7 /* BeerSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerSelectionViewController.swift; sourceTree = "<group>"; };
 		AA5811C71CAC84C50060E27C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA5811C91CAC94290060E27C /* FirstTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeViewController.swift; sourceTree = "<group>"; };
@@ -71,8 +76,6 @@
 		AAEB22061C9A348C00035524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAEB22081C9A348C00035524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAEB220D1C9A348C00035524 /* AlCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAEB22111C9A348C00035524 /* AlCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlCalcTests.swift; sourceTree = "<group>"; };
-		AAEB22131C9A348C00035524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAEB22181C9A348C00035524 /* AlCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB221C1C9A348C00035524 /* AlCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlCalcUITests.swift; sourceTree = "<group>"; };
 		AAEB221E1C9A348C00035524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +113,6 @@
 				AABB8FCA1CBF07AA0099EDDD /* Party+CoreDataProperties.swift */,
 				AABB8FCB1CBF07AA0099EDDD /* Party.swift */,
 				AAEB21FB1C9A348C00035524 /* AlCalc */,
-				AAEB22101C9A348C00035524 /* AlCalcTests */,
 				AAEB221B1C9A348C00035524 /* AlCalcUITests */,
 				AAEB21FA1C9A348C00035524 /* Products */,
 			);
@@ -148,17 +150,10 @@
 				AABB8FC81CBF074F0099EDDD /* DataController.swift */,
 				AA798F061CC6C29D004440C1 /* OldPartyViewController.swift */,
 				A9C3045C1CC70D2F00D27D95 /* OPGuestListViewController.swift */,
+				AA1D24391CD16756005B0F89 /* GuestListTest.swift */,
+				AA1D243B1CD16D84005B0F89 /* Calculation.swift */,
 			);
 			path = AlCalc;
-			sourceTree = "<group>";
-		};
-		AAEB22101C9A348C00035524 /* AlCalcTests */ = {
-			isa = PBXGroup;
-			children = (
-				AAEB22111C9A348C00035524 /* AlCalcTests.swift */,
-				AAEB22131C9A348C00035524 /* Info.plist */,
-			);
-			path = AlCalcTests;
 			sourceTree = "<group>";
 		};
 		AAEB221B1C9A348C00035524 /* AlCalcUITests */ = {
@@ -166,6 +161,7 @@
 			children = (
 				AAEB221C1C9A348C00035524 /* AlCalcUITests.swift */,
 				AAEB221E1C9A348C00035524 /* Info.plist */,
+				AA1D243F1CD16E13005B0F89 /* oldparty.swift */,
 			);
 			path = AlCalcUITests;
 			sourceTree = "<group>";
@@ -328,7 +324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAEB22121C9A348C00035524 /* AlCalcTests.swift in Sources */,
+				AA1D243A1CD16756005B0F89 /* GuestListTest.swift in Sources */,
+				AA1D243C1CD16D84005B0F89 /* Calculation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1D24401CD16E13005B0F89 /* oldparty.swift in Sources */,
 				AAEB221D1C9A348C00035524 /* AlCalcUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
